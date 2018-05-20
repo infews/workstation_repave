@@ -10,7 +10,7 @@ source ./install/workspace_dir.sh
 source ./install/xcode.sh
 
 # install brew and its packages
-source ./install_brew.sh
+source ./install/brew.sh
 # source ./brew-bundle.sh
 
 # bash-it / terminal

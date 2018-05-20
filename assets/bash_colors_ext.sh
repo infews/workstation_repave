@@ -1,5 +1,6 @@
 #!/bin/bash
 
+set -e
 source assets/.bash_colors
 
 CLR_YELLOW=33

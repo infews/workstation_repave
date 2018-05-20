@@ -1,0 +1,47 @@
+cask_args appdir: "/Applications"
+
+tap 'git-duet/tap'
+
+brew 'ack'
+brew 'aria2'
+brew 'chruby'
+brew 'direnv'
+brew 'git-duet'
+brew 'jq'
+brew 'mas'
+brew 'mysql'
+brew 'node'
+brew 'postgresql'
+brew 'pstree'
+brew 'qt'
+brew 'ssh-copy-id'
+brew 'ruby-install'
+brew 'the_silver_searcher'
+brew 'the_platinum_searcher'
+brew 'tree'
+brew 'watch'
+brew 'wget'
+
+cask 'atom'
+cask 'dropbox'
+cask 'firefox'
+cask 'fluid'
+cask 'github'
+cask 'libxml2'
+cask 'libxslt'
+cask 'flycut'
+cask 'google-chrome'
+cask 'google-drive-file-stream'
+cask 'nvalt'
+cask 'rubymine'
+cask 'slack'
+cask 'slate'
+cask 'xquartz'
+cask 'xscope'
+
+# eventually put mas calls here, complete with IDs
+
+# LastPass
+# Marked 2
+# Soulver
+# Daisy Disk

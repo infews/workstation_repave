@@ -1,0 +1,57 @@
+#!/usr/bin/env ruby
+begin
+  require 'rainbow/refinement'
+rescue LoadError => e
+  puts "Rainbow gem not present."
+  puts "Run 'gem install rainbow and try again."
+  exit
+end
+
+project_root = File.dirname(File.absolute_path(__FILE__))
+# files = Dir.glob(project_root + '/install/*.rb'){ |file| require file }
+# puts files
+
+require "#{project_root}/install/sudo_up_front"
+require "#{project_root}/install/workspace_dir"
+
+using Rainbow
+
+SudoUpFront.do
+WorkspaceDir.do
+
+# wor
+kspace_dir
+# chruby
+# Ruby 2.5
+# Brew
+# install chruby
+# install ruby 2.5
+# switch ruby to latest
+
+# brew
+# brew bundler
+# bundler
+# bash-it
+# rubymine prefs
+
+
+# base development
+#source ./install/workspace_dir.sh
+#source ./install/xcode.sh
+
+# install brew and its packages
+#source ./install/brew.sh
+# source ./brew-bundle.sh
+
+# bash-it / terminal
+# source ./setup-bash-it.sh
+# source ./setup-custom-bash-it-plugins.sh
+
+# git setup
+# source ./setup-git-config.sh
+# source ./setup-git-duet.sh
+
+# ruby setup
+# source ./setup-ruby.sh
+# source ./setup-rubymine.sh
+# source ./install-bundler.sh

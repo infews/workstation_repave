@@ -1,11 +1,11 @@
-require 'rainbow/refinement'
+require 'rainbow'
 using Rainbow
 
-class Xcode
+class XcodeSierra
 
   @@installer = '~/Downloads/Command Line Tools (macOS Sierra version 10.12).pkg'
 
-  def Xcode.do
+  def XcodeSierra.do
 
     if present?
       puts 'XCode present, moving on'.yellow
@@ -28,7 +28,7 @@ class Xcode
     end
   end
 
-  def Xcode.present?
+  def XcodeSierra.present?
     `xcode-select -p` =~ /Developer/
   end
 end

@@ -7,24 +7,18 @@ rescue LoadError => e
   puts "Run 'gem install rainbow and try again."
   exit
 end
+using Rainbow
 
 actors_path = File.join(File.dirname(File.absolute_path(__FILE__)), 'actors')
-require File.join(actors_path, 'bundler')
-require File.join(actors_path, 'copyfiles')
-require File.join(actors_path, 'homebrew')
-require File.join(actors_path, 'ruby_install')
-require File.join(actors_path, 'sudo_up_front')
-require File.join(actors_path, 'workspace_dir')
-require File.join(actors_path, 'xcode_sierra')
-
-using Rainbow
+actors_files = Dir["#{actors_path}/*"]
+actors_files.each {|file| require file }
 
 actors = [
   SudoUpFront,
   WorkspaceDir,
   XcodeSierra,
   Homebrew,
-  CopyFilesToHome,
+  LinkSlateFile,
   RubyInstall,
   Bundler
 ]

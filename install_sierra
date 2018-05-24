@@ -8,19 +8,27 @@ rescue LoadError => e
 end
 
 project_root = File.dirname(File.absolute_path(__FILE__))
-# files = Dir.glob(project_root + '/install/*.rb'){ |file| require file }
-# puts files
-
 require "#{project_root}/install/sudo_up_front"
 require "#{project_root}/install/workspace_dir"
+require "#{project_root}/install/xcode"
+require "#{project_root}/install/homebrew"
 
 using Rainbow
 
-SudoUpFront.do
-WorkspaceDir.do
+installers = [
+  SudoUpFront,
+  WorkspaceDir,
+  Xcode,
+  Homebrew
+]
+
+puts "Executing these actors: ".mediumpurple + installers.join(", ")
+
+installers.each do |installer|
+  exit unless installer.do
+end
 
 # wor
-kspace_dir
 # chruby
 # Ruby 2.5
 # Brew

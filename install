@@ -9,6 +9,7 @@ end
 
 actors_path = File.join(File.dirname(File.absolute_path(__FILE__)), 'install'
 require File.join(actors_path, 'bundler')
+require File.join(actors_path, 'copyfiles')
 require File.join(actors_path, 'homebrew')
 require File.join(actors_path, 'ruby_install')
 require File.join(actors_path, 'sudo_up_front')
@@ -18,6 +19,7 @@ require File.join(actors_path, 'xcode')
 using Rainbow
 
 actors = [
+  CopyFilesToHome,
   SudoUpFront,
   WorkspaceDir,
   Xcode,

@@ -32,6 +32,7 @@ cask 'libxslt'
 cask 'flycut'
 cask 'google-chrome'
 cask 'google-drive-file-stream'
+cask 'intellij-idea-ce'
 cask 'nvalt'
 cask 'rubymine'
 cask 'slack'
@@ -39,7 +40,7 @@ cask 'slate'
 cask 'xquartz'
 cask 'xscope'
 
-# eventually put mas calls here, complete with IDs
+# Merge MAS lines from other Brewfile
 
 # LastPass
 # Marked 2

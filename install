@@ -28,8 +28,9 @@ end
 
 system_and_apps = [
   SudoUpFront,
-  WorkspaceDir,
   XcodeSierra,
+  SystemName,
+  WorkspaceDir,
   Homebrew,
   LinkSlateFile,
   # macos defaults

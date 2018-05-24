@@ -12,6 +12,7 @@ require "#{project_root}/install/sudo_up_front"
 require "#{project_root}/install/workspace_dir"
 require "#{project_root}/install/xcode"
 require "#{project_root}/install/homebrew"
+require "#{project_root}/install/bunlder"
 
 using Rainbow
 
@@ -19,7 +20,8 @@ installers = [
   SudoUpFront,
   WorkspaceDir,
   Xcode,
-  Homebrew
+  Homebrew,
+  Bundler
 ]
 
 puts "Executing these actors: ".mediumpurple + installers.join(", ")
@@ -31,31 +33,9 @@ installers.each do |installer|
   end
 end
 
-# wor
-# chruby
-# Ruby 2.5
-# Brew
-# install chruby
-# install ruby 2.5
-# switch ruby to latest
-
-# brew
-# brew bundler
-# bundler
-# bash-it
 # rubymine prefs
+# Terminal profile
 
-
-# base development
-#source ./install/workspace_dir.sh
-#source ./install/xcode.sh
-
-# install brew and its packages
-#source ./install/brew.sh
-# source ./brew-bundle.sh
-
-# bash-it / terminal
-# source ./setup-bash-it.sh
 # source ./setup-custom-bash-it-plugins.sh
 
 # git setup

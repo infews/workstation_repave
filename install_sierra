@@ -26,6 +26,9 @@ puts "Executing these actors: ".mediumpurple + installers.join(", ")
 
 installers.each do |installer|
   exit unless installer.do
+  if installer.respond_to? :setup
+    exit unless installer.setup
+  end
 end
 
 # wor

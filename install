@@ -37,14 +37,11 @@ end
 
 # rubymine prefs
 # Terminal profile
+# macOS defaults
+# git
 
 # source ./setup-custom-bash-it-plugins.sh
 
 # git setup
 # source ./setup-git-config.sh
 # source ./setup-git-duet.sh
-
-# ruby setup
-# source ./setup-ruby.sh
-# source ./setup-rubymine.sh
-# source ./install-bundler.sh

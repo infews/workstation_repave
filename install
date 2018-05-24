@@ -7,17 +7,17 @@ rescue LoadError => e
   exit
 end
 
-project_root = File.dirname(File.absolute_path(__FILE__))
-require "#{project_root}/install/bunlder"
-require "#{project_root}/install/homebrew"
-require "#{project_root}/install/ruby_install"
-require "#{project_root}/install/sudo_up_front"
-require "#{project_root}/install/workspace_dir"
-require "#{project_root}/install/xcode"
+actors_path = File.join(File.dirname(File.absolute_path(__FILE__)), 'install'
+require File.join(actors_path, 'bundler')
+require File.join(actors_path, 'homebrew')
+require File.join(actors_path, 'ruby_install')
+require File.join(actors_path, 'sudo_up_front')
+require File.join(actors_path, 'workspace_dir')
+require File.join(actors_path, 'xcode')
 
 using Rainbow
 
-installers = [
+actors = [
   SudoUpFront,
   WorkspaceDir,
   Xcode,
@@ -26,12 +26,12 @@ installers = [
   RubyInstall
 ]
 
-puts "Executing these actors: ".mediumpurple + installers.join(", ")
+puts "Executing these actors: ".mediumpurple + actors.join(", ")
 
-installers.each do |installer|
-  exit unless installer.do
-  if installer.respond_to? :setup
-    exit unless installer.setup
+actors.each do |actor|
+  exit unless actor.do
+  if actor.respond_to? :setup
+    exit unless actor.setup
   end
 end
 

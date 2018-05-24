@@ -1,6 +1,7 @@
 cask_args appdir: "/Applications"
 
 tap 'git-duet/tap'
+tap 'homebrew/versions'
 
 brew 'ack'
 brew 'aria2'
@@ -39,6 +40,7 @@ cask 'quicksilver' # only needed for aftermarket SSD upgraded iMacs
 cask 'rubymine'
 cask 'slack'
 cask 'slate'
+cask 'vmware-fusion8'
 cask 'xquartz'
 cask 'xscope'
 

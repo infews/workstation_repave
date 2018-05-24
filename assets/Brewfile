@@ -40,9 +40,11 @@ cask 'slate'
 cask 'xquartz'
 cask 'xscope'
 
-# Merge MAS lines from other Brewfile
-
-# LastPass
-# Marked 2
-# Soulver
-# Daisy Disk
+mas "Daisy Disk", id: 411643860
+mas "LastPass", id: 926036361
+mas "Marked 2", id: 890031187
+mas "Server", id: 883878097
+mas "Slack", id: 803453959
+mas "SomaFM", id: 449155338
+mas "Soulver", id: 413965349
+mas "ToDoist", id: 585829637

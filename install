@@ -7,7 +7,7 @@ rescue LoadError => e
   exit
 end
 
-actors_path = File.join(File.dirname(File.absolute_path(__FILE__)), 'install')
+actors_path = File.join(File.dirname(File.absolute_path(__FILE__)), 'actors')
 require File.join(actors_path, 'bundler')
 require File.join(actors_path, 'copyfiles')
 require File.join(actors_path, 'homebrew')

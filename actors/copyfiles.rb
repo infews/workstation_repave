@@ -1,5 +1,6 @@
 require 'rainbow'
 using Rainbow
+require 'fileutils'
 
 class CopyFilesToHome
 

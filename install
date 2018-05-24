@@ -8,11 +8,12 @@ rescue LoadError => e
 end
 
 project_root = File.dirname(File.absolute_path(__FILE__))
+require "#{project_root}/install/bunlder"
+require "#{project_root}/install/homebrew"
+require "#{project_root}/install/ruby_install"
 require "#{project_root}/install/sudo_up_front"
 require "#{project_root}/install/workspace_dir"
 require "#{project_root}/install/xcode"
-require "#{project_root}/install/homebrew"
-require "#{project_root}/install/bunlder"
 
 using Rainbow
 
@@ -21,7 +22,8 @@ installers = [
   WorkspaceDir,
   Xcode,
   Homebrew,
-  Bundler
+  Bundler,
+  RubyInstall
 ]
 
 puts "Executing these actors: ".mediumpurple + installers.join(", ")

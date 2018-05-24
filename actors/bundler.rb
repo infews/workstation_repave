@@ -6,11 +6,11 @@ class Bundler
   def Bundler.do
 
     if present?
-      puts 'Bundler present, moving on'.yellow
+      puts Rainbow('Bundler present, moving on').yellow
       return true
     end
 
-    puts 'Installing Bundler'.green
+    puts Rainbow('Installing Bundler').green
     good_result = system 'gem install bundler'
     return good_result
 

@@ -25,7 +25,7 @@ class BashIt
 
   def BashIt.setup
     @@extentions = {
-      'plugins' => ['fasd', 'history'],
+      'plugins' => ['fasd', 'history', 'chruby-auto'],
       'completion' => ['defaults', 'git', 'ssh'],
       'alias' => ['bundler', 'git']
     }
@@ -48,11 +48,11 @@ class BashIt
 
     Dir.chdir enabled_path do
       if File.exists? name
-        puts name + " bash_it #{entity} already enabled, moving on".yellow
+        puts name + Rainbow(" bash_it #{entity} already enabled, moving on").yellow
       elsif !File.exists? File.join(available_path, name, '.bash')
-        puts "bash_it #{entity} ".red + name + 'not available'.red
+        puts Rainbow("bash_it #{entity} ").red + name + Rainbow('not available'.red)
       else
-        puts "Enabling bash_it #{entity} ".green + name
+        puts Rainbow("Enabling bash_it #{entity} ").green + name
         `ln -s available/#{name}.bash`
       end
     end

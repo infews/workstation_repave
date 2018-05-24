@@ -7,11 +7,11 @@ class WorkspaceDir
 
   def WorkspaceDir.do
     if File.exists? File.join(Dir.home, 'workspace')
-      puts @@workspace_dir + " present, moving on".yellow
+      puts @@workspace_dir + Rainbow(" present, moving on").yellow
       return true
     end
 
-    puts "Creating ".mediumpurple + @@workspace_dir + " directory".mediumpurple
+    puts Rainbow("Creating ").mediumpurple + @@workspace_dir + Rainbow(" directory").mediumpurple
     Dir.mkdir File.join(Dir.home, 'workspace')
   end
 end

@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 begin
-  require 'rainbow/refinement'
+  require 'rubygems'
+  require 'rainbow'
 rescue LoadError => e
   puts "Rainbow gem not present."
   puts "Run 'gem install rainbow and try again."
@@ -19,16 +20,16 @@ require File.join(actors_path, 'xcode_sierra')
 using Rainbow
 
 actors = [
-  CopyFilesToHome,
   SudoUpFront,
   WorkspaceDir,
   XcodeSierra,
   Homebrew,
+  CopyFilesToHome,
   Bundler,
   RubyInstall
 ]
 
-puts "Executing these actors: ".mediumpurple + actors.join(", ")
+puts Rainbow("Executing these actors: ").mediumpurple + actors.join(", ")
 
 actors.each do |actor|
   exit unless actor.do

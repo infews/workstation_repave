@@ -9,13 +9,13 @@ class CopyFilesToHome
 
     @@home_files = ['.slate']
 
-    puts 'Copying files to homedir'.mediumpurple
+    puts Rainbow('Copying files to homedir').green
 
     @@home_files.each do |file|
       if File.exists? File.join(Dir.home, file)
-        puts file + ' already exists, moving on'.yellow
+        puts file + Rainbow(' already exists, moving on').yellow
       else
-        puts 'Copying '.green + file + ' to ~/'.green
+        puts Rainbow('Copying ').green + file + Rainbow(' to ~/').green
         FileUtils.copy_file(File.join('assets', file), File.join(Dir.home, file))
       end
     end

@@ -9,9 +9,9 @@ class Homebrew
 
   def Homebrew.do
     if present?
-      puts "Homebrew present, moving on".yellow
+      puts Rainbow("Homebrew present, moving on").yellow
     else
-      puts 'Installing Homebrew'.green
+      puts Rainbow('Installing Homebrew').green
       Dir.mkdir 'homebrew'
       Dir.chdir 'homebrew' do
         `curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew`
@@ -19,9 +19,9 @@ class Homebrew
     end
 
     if File.exists? @@brewfile_link
-      puts 'Brewfile symlink present, moving on'.yellow
+      puts Rainbow('Brewfile symlink present, moving on').yellow
     else
-      puts 'Creating Brewfile symlink'.green
+      puts Rainbow('Creating Brewfile symlink').green
       `ln -s #{@@brewfile} #{@@brewfile_link}`
     end
 
@@ -33,12 +33,12 @@ class Homebrew
   end
 
   def Homebrew.setup
-    puts 'Updating Homebrew'.green
+    puts Rainbow('Updating Homebrew').green
     `brew update`
-    puts 'Running '.green + 'brew bundle ' + 'including casks & Mac App Store'.green
+    puts Rainbow('Running ').green + 'brew bundle ' + Rainbow('including casks & Mac App Store').green
     `brew tap Homebrew/bundle`
     `brew bundle --global`
-    puts 'Running '.green + 'brew cleanup'
+    puts Rainbow('Running ').green + 'brew cleanup'
     `brew cleanup`
     return true
   end

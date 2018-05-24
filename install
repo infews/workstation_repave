@@ -9,36 +9,40 @@ rescue LoadError => e
 end
 using Rainbow
 
+# include all actors
 actors_path = File.join(File.dirname(File.absolute_path(__FILE__)), 'actors')
-actors_files = Dir["#{actors_path}/*"]
-actors_files.each {|file| require file }
+Dir[File.join(actors_path, '*')].each {|file| require file }
 
-actors = [
+def run_actors(actors)
+  puts Rainbow('Executing these actors: ').mediumpurple + actors.join(', ')
+  actors.each do |actor|
+    if actor.respond_to? :do
+      exit unless actor.do
+    end
+
+    if actor.respond_to? :setup
+      exit unless actor.setup
+    end
+  end
+end
+
+system_and_apps = [
   SudoUpFront,
   WorkspaceDir,
   XcodeSierra,
   Homebrew,
   LinkSlateFile,
-  RubyInstall,
-  Bundler
+  # macos defaults
+  # terminal defaults
+  # chruby
+  # dotfiles
 ]
 
-puts Rainbow("Executing these actors: ").mediumpurple + actors.join(", ")
+ruby_development = [
+  RubyInstall,
+  Bundler
+  # rubymine prefs
+]
 
-actors.each do |actor|
-  exit unless actor.do
-  if actor.respond_to? :setup
-    exit unless actor.setup
-  end
-end
-
-# rubymine prefs
-# Terminal profile
-# macOS defaults
-# git
-
-# source ./setup-custom-bash-it-plugins.sh
-
-# git setup
-# source ./setup-git-config.sh
-# source ./setup-git-duet.sh
+run_actors system_and_apps
+run_actors ruby_development

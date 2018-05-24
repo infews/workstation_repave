@@ -34,12 +34,12 @@ class Homebrew
 
   def Homebrew.setup
     puts Rainbow('Updating Homebrew').green
-    `brew update`
+    system 'brew update'
     puts Rainbow('Running ').green + 'brew bundle ' + Rainbow('including casks & Mac App Store').green
-    `brew tap Homebrew/bundle`
-    `brew bundle --global`
+    system 'brew tap Homebrew/bundle'
+    system 'brew bundle --global'
     puts Rainbow('Running ').green + 'brew cleanup'
-    `brew cleanup`
+    system 'brew cleanup'
     return true
   end
 

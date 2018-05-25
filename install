@@ -33,6 +33,7 @@ system_and_apps = [
   WorkspaceDir,
   Homebrew,
   Rcm,
+  MacOsDefaults
   # macos defaults
   # terminal defaults
   # chruby

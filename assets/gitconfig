@@ -21,3 +21,7 @@
 
 [url "git@github.com:"]
   pushInsteadOf = https://github.com/
+
+[user]
+	name = Davis W. Frank
+	email = dwfrank@gmail.com

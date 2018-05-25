@@ -28,6 +28,7 @@ brew 'watch'
 brew 'wget'
 
 cask 'atom'
+cask 'deckset'
 cask 'dropbox'
 cask 'firefox'
 cask 'fluid'
@@ -45,6 +46,7 @@ cask 'slate'
 cask 'vmware-fusion8'
 cask 'xquartz'
 cask 'xscope'
+cask 'zoomus'
 
 mas "Daisy Disk", id: 411643860
 mas "LastPass", id: 926036361

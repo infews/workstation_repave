@@ -18,13 +18,17 @@ Since Sierra only has Ruby 2.0.0, there are some additional hoops
 
 # Post install work:
 
+(Some of these are clearly possible to automate)
+
 - Chrome Profiles
 - Dropbox Setup
 - Github desktop
-- Slate restart, slate on login
-- MacsFans on login
-- Quicksilver config, on login, network plugin
-- Inconsolata font
+- Login apps:
+  - Slate restart, slate on login
+  - MacsFans on login
+  - Quicksilver config, on login, network plugin
+  - Flycut
+- Inconsolata font (fonts on brew?)
 - nvALT points to Dropbox directory
 - Desktop backgrounds are different, point to Dropbox, and rotate every 30mins
 - Get Pivotal RPI directory into workspace

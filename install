@@ -32,7 +32,7 @@ system_and_apps = [
   SystemName,
   WorkspaceDir,
   Homebrew,
-  LinkSlateFile,
+  Rcm,
   # macos defaults
   # terminal defaults
   # chruby
@@ -46,4 +46,4 @@ ruby_development = [
 ]
 
 run_actors system_and_apps
-run_actors ruby_development
+#run_actors ruby_development

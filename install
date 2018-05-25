@@ -34,17 +34,12 @@ system_and_apps = [
   Homebrew,
   Rcm,
   MacOsDefaults
-  # macos defaults
-  # terminal defaults
-  # chruby
-  # dotfiles
 ]
 
 ruby_development = [
   RubyInstall,
   Bundler
-  # rubymine prefs
 ]
 
-run_actors system_and_apps
-#run_actors ruby_development
+#run_actors system_and_apps
+run_actors ruby_development

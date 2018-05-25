@@ -121,6 +121,12 @@ shopt -s histappend # append to hist file
 ## Force xterm-256color
 export TERM="xterm-256color"
 
+## ChRuby
+if [[ -f /usr/local/share/chruby/chruby.sh ]]; then
+  source /usr/local/share/chruby/chruby.sh
+  source /usr/local/share/chruby/auto.sh
+fi
+
 ## Golang: This has to happen after GVM otherwise GOPATH will get unset
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH:/usr/local/go/bin

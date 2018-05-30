@@ -8,15 +8,16 @@ class Homebrew
   @@brewfile_link = File.join Dir.home, '.Brewfile'
 
   def Homebrew.do(path)
+    good_result = true
+
     if present?
       puts Rainbow("Homebrew present, moving on").yellow
     else
       puts Rainbow('Installing Homebrew').green
-      Dir.mkdir 'homebrew'
-      Dir.chdir 'homebrew' do
-        `curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew`
-      end
+      good_result = system '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
     end
+    
+    exit unless good_result
 
     if File.exists? @@brewfile_link
       puts Rainbow('Brewfile symlink present, moving on').yellow

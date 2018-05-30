@@ -21,6 +21,8 @@ class Director
 
   def run_actors(actors)
     actors = Array(actors)
+    actors.unshift 'SudoUpFront'
+
     puts Rainbow('Executing these actors: ').mediumpurple + actors.join(', ')
     actors.each do |actor|
       if actor.respond_to? :do
@@ -37,13 +39,12 @@ end
 director = Director.new path
 
 system_and_apps = [
-  SudoUpFront,
   XcodeSierra,
   SystemName,
   WorkspaceDir,
   Homebrew,
   Rcm,
-  MacOsDefaults
+  #MacOsDefaults
 ]
 
 ruby_development = [
@@ -51,6 +52,5 @@ ruby_development = [
   Bundler
 ]
 
-#director.run_actors system_and_apps
-#director.run_actors ruby_development
-director.run_actors Rcm
+director.run_actors system_and_apps
+director.run_actors ruby_development

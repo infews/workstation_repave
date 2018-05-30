@@ -5,7 +5,7 @@ class WorkspaceDir
 
   @@workspace_dir = '~/workspace'
 
-  def WorkspaceDir.do
+  def WorkspaceDir.do(path)
     if File.exists? File.join(Dir.home, 'workspace')
       puts @@workspace_dir + Rainbow(" present, moving on").yellow
       return true

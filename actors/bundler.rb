@@ -3,7 +3,7 @@ using Rainbow
 
 class Bundler
 
-  def Bundler.do
+  def Bundler.do(path)
 
     if present?
       puts Rainbow('Bundler present, moving on').yellow

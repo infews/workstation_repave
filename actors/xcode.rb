@@ -3,7 +3,7 @@ using Rainbow
 
 class Xcode
 
-  def Xcode.do
+  def Xcode.do(path)
 
     if present?
       puts Rainbow('XCode present, moving on').yellow

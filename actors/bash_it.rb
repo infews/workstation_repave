@@ -7,7 +7,7 @@ class BashIt
   @@brewfile = File.join Dir.pwd, 'assets', 'Brewfile'
   @@brewfile_link = File.join Dir.home, '.Brewfile'
 
-  def BashIt.do
+  def BashIt.do(path)
     if present?
       puts "BashIt present, moving on".yellow
     else

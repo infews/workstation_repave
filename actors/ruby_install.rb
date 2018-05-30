@@ -5,7 +5,7 @@ class RubyInstall
 
   @@installer = '~/Downloads/Command Line Tools (macOS Sierra version 10.12).pkg'
 
-  def RubyInstall.do
+  def RubyInstall.do(path)
 
     @@ruby_version = '2.5.1'
 

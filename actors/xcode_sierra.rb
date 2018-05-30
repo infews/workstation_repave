@@ -5,7 +5,7 @@ class XcodeSierra
 
   @@installer = '~/Downloads/Command Line Tools (macOS Sierra version 10.12).pkg'
 
-  def XcodeSierra.do
+  def XcodeSierra.do(path)
 
     if present?
       puts Rainbow('XCode present, moving on').yellow

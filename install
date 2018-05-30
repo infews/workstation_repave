@@ -9,19 +9,27 @@ rescue LoadError => e
 end
 using Rainbow
 
-# include all actors
-actors_path = File.join(File.dirname(File.absolute_path(__FILE__)), 'actors')
+path = File.join(File.dirname(File.absolute_path(__FILE__)))
+actors_path = actors_path = File.join(path, 'actors')
 Dir[File.join(actors_path, '*')].each {|file| require file }
 
-def run_actors(actors)
-  puts Rainbow('Executing these actors: ').mediumpurple + actors.join(', ')
-  actors.each do |actor|
-    if actor.respond_to? :do
-      exit unless actor.do
-    end
+class Director
 
-    if actor.respond_to? :setup
-      exit unless actor.setup
+  def initialize(path)
+    @path = path
+  end
+
+  def run_actors(actors)
+    actors = Array(actors)
+    puts Rainbow('Executing these actors: ').mediumpurple + actors.join(', ')
+    actors.each do |actor|
+      if actor.respond_to? :do
+        exit unless actor.do(@path)
+      end
+
+      if actor.respond_to? :setup
+        exit unless actor.setup(@path)
+      end
     end
   end
 end
@@ -41,5 +49,8 @@ ruby_development = [
   Bundler
 ]
 
+director = Director.new path
+director.run_actors Rcm
 #run_actors system_and_apps
-run_actors ruby_development
+#run_actors ruby_development
+#run_actors Rcm

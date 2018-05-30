@@ -5,7 +5,7 @@ class SystemName
 
   @@name = 'redwood'
 
-  def SystemName.setup
+  def SystemName.setup(path)
 
     Rainbow("Setting system name to #{@@name}").green
 

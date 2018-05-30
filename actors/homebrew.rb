@@ -7,7 +7,7 @@ class Homebrew
   @@brewfile = File.join Dir.pwd, 'assets', 'Brewfile'
   @@brewfile_link = File.join Dir.home, '.Brewfile'
 
-  def Homebrew.do
+  def Homebrew.do(path)
     if present?
       puts Rainbow("Homebrew present, moving on").yellow
     else

@@ -34,6 +34,8 @@ class Director
   end
 end
 
+director = Director.new path
+
 system_and_apps = [
   SudoUpFront,
   XcodeSierra,
@@ -49,8 +51,6 @@ ruby_development = [
   Bundler
 ]
 
-director = Director.new path
+#director.run_actors system_and_apps
+#director.run_actors ruby_development
 director.run_actors Rcm
-#run_actors system_and_apps
-#run_actors ruby_development
-#run_actors Rcm

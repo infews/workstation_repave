@@ -32,7 +32,7 @@ class Homebrew
     !`which brew`.empty?
   end
 
-  def Homebrew.setup
+  def Homebrew.setup(path)
     puts Rainbow('Updating Homebrew').green
     system 'brew update'
     puts Rainbow('Running ').green + 'brew bundle ' + Rainbow('including casks & Mac App Store').green

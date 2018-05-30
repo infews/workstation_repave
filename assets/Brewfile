@@ -1,6 +1,7 @@
 cask_args appdir: "/Applications"
 
 tap 'git-duet/tap'
+tap 'homebrew/cask-fonts'
 tap 'thoughtbot/formulae'
 
 brew 'ack'
@@ -34,6 +35,7 @@ cask 'firefox'
 cask 'fluid'
 cask 'github'
 cask 'flycut'
+cask 'font-inconsolata'
 cask 'fujitsu-scansnap-manager-s1300'
 cask 'google-chrome'
 cask 'google-drive-file-stream'

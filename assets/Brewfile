@@ -36,8 +36,10 @@ cask 'firefox'
 cask 'fluid'
 cask 'github'
 cask 'flycut'
-cask 'font-inconsolata'
-cask 'fujitsu-scansnap-manager-s1300'
+cask 'font-inconsolata-g-for-powerline'
+cask 'font-fira-code'
+cask 'font-source-code-pro'
+#cask 'fujitsu-scansnap-manager-s1300' # Only at home
 cask 'google-chrome'
 cask 'google-drive-file-stream'
 cask 'intellij-idea-ce'
@@ -47,11 +49,12 @@ cask 'quicksilver'
 cask 'rubymine'
 cask 'slack'
 cask 'slate'
-cask 'vmware-fusion8'
+# cask 'vmware-fusion8' # Only at home
 cask 'xquartz'
 cask 'xscope'
 cask 'zoomus'
 
+# DWF's Mac App Store apps YMMV; mas list can get your ID's for you
 mas "Daisy Disk", id: 411643860
 mas "LastPass", id: 926036361
 mas "Marked 2", id: 890031187

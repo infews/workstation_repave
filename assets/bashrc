@@ -18,6 +18,12 @@ alias vim='nvim'
 export EDITOR='nvim'
 
 ## Functions
+
+
+function run { 
+  seq 1 $1| { shift; xargs -i -- "$@"; } 
+}
+
 pullify() {
   git config --add remote.origin.fetch '+refs/pull/*/head:refs/remotes/origin/pr/*'
   git fetch origin

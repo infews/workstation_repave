@@ -19,9 +19,13 @@ export EDITOR='nvim'
 
 ## Functions
 
-
-function run { 
-  seq 1 $1| { shift; xargs -i -- "$@"; } 
+# usage 'run 10 command --option 1' - runs any command with options a number of times
+function run() {
+    number=$1
+    shift
+    for i in `seq $number`; do
+      $@
+    done
 }
 
 pullify() {

@@ -42,14 +42,15 @@ system_and_apps = [
   XcodeSierra,
   SystemName,
   WorkspaceDir,
-  Homebrew,
-  Rcm,
   #MacOsDefaults
 ]
 
 ruby_development = [
+  Homebrew,
+  Rcm,
   RubyInstall,
-  Bundler
+  Bundler,
+  PivotalIntellij
 ]
 
 director.run_actors system_and_apps

@@ -4,7 +4,7 @@ begin
   require 'rainbow'
 rescue LoadError => e
   puts "Rainbow gem not present."
-  puts "Run 'gem install rainbow and try again."
+  puts "Run 'gem install rainbow' and try again."
   exit
 end
 using Rainbow
@@ -39,18 +39,19 @@ end
 director = Director.new path
 
 system_and_apps = [
-  XcodeSierra,
+#  Xcode,
   SystemName,
-  WorkspaceDir,
-  #MacOsDefaults
+#  WorkspaceDir,
+#  MacOsDefaults
 ]
 
 ruby_development = [
   Homebrew,
-  Rcm,
+  #QSInterfaceYosemite
+  #Rcm,
   RubyInstall,
-  Bundler,
-  PivotalIntellij
+  #Bundler,
+  #PivotalIntellij
 ]
 
 director.run_actors system_and_apps

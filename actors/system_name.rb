@@ -3,7 +3,7 @@ using Rainbow
 
 class SystemName
 
-  @@name = 'redwood'
+  @@name = 'coldiron'
 
   def SystemName.setup(path)
 

@@ -7,7 +7,7 @@ class RubyInstall
 
   def RubyInstall.do(path)
 
-    @@ruby_version = '2.5.1'
+    @@ruby_version = '2.6.5'
 
     if present?
       puts Rainbow("Ruby #{@@ruby_version} present, moving on").yellow

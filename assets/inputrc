@@ -1,9 +1,0 @@
-# Make Tab autocomplete regardless of filename case
-set completion-ignore-case on
-
-# List all matches in case multiple possible completions are possible
-
-# Arrows and ambiguity
-set show-all-if-ambiguous on
-"\e[A": history-search-backward
-"\e[B": history-search-forward

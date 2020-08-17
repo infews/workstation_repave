@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+
+module Repave
+  class Bootstrap
+    def go
+      puts "Installing XCode command line utils & git"
+      system "xcode-select --install"
+
+      puts "Making the ~/workspace directory"
+      workspace = File.expand_path("~/workspace")
+      FileUtils.mkdir_p workspace
+
+      Dir.chdir workspace do
+        puts "Cloning this repository"
+        system "git clone https://github.com/infews/workstation_repave.git"
+      end
+
+      puts "You may now run bin/repave"
+    end
+  end
+end
+
+bootstraper = Repave::Bootstrap.new
+bootstraper.go

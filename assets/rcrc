@@ -1,2 +1,2 @@
-EXCLUDES="Brewfile gitinclude"
-DOTFILES_DIRS="${HOME}/workspace/balboa_workspace/assets"
+EXCLUDES="Brewfile* gitinclude"
+DOTFILES_DIRS="${HOME}/workspace/workstation_repave/assets"

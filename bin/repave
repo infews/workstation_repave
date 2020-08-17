@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+require_relative File.expand_path(File.join(__dir__, "..", "lib", "repave"))
+
+[
+  Repave::SetSystemName,
+  Repave::SetMacOsDefaults,
+  Repave::AppendToGitconfig,
+  Repave::InstallOhMyZsh,
+  Repave::RcmConfig,
+  Repave::PrepHomebrew
+].each do |klass|
+  task = klass.send("new")
+  task.go
+end
+

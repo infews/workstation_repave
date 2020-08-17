@@ -1,21 +1,44 @@
-# Balboa Workspace Setup
+# Workstation Repave
 
 Building a happy MacOS workstation with all the things.
 
-Relies heavily on [Homebrew][homebrew], but does do some manual stuff.
+System Ruby, [Homebrew][homebrew], and [Homebrew Bundle][homebrew_bundle] do the heavy lifting. But there is some lightweight Ruby-based shell scripting as well
 
-# How To...
+## Assumptions
 
-1. Install MacOS (known to work with Sierra and High Sierra)
-1. Install XCode command line tools
-    - Run Terminal
-    - `git`
-    - This will trigger the install for XCode command line tools (for Sierra, see below)
-1. Clone this repo; I like to put all code in `~/workspace`
-1. Edit `assets/Brewfile`
-    - This project depends on [Homebrew Bundle][homebrew_bundle]
-1. Edit `./install` to list the actors you want to use, and the order you want to use them
-1. Run `./install`, likely repeatedly
+- MacOS Catalina or later
+- Internet is connected
+
+# First run
+
+1. Have a clean MacOS
+1. Run Terminal
+1. Run the following:
+
+```shell script
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/infews/workstation_repave/master/bootstrap)"
+```
+1. Follow the prompts
+
+# Subsequent Runs
+
+
+# What's Happening?
+
+## Bootstrap
+
+The `bootstrap` script will do the following:
+- Install XCode's command line tools, which includes git
+- Make the ~/workspace directory (for all your coding projects)
+- Clone this repo
+- Prompt you to run the follow-on script
+
+## Repave
+
+Once you have this repo locally, you can run the `repave` script to run the remainder 
+
+## Homebrew
+
 
 ## Special Instructions for MacOS Sierra
 

@@ -11,7 +11,7 @@ module Repave
         return
       end
 
-      info_message("Adding include directive to .gitconfig.")
+      puts info_message("Adding include directive to .gitconfig.")
 
       File.open gitconfig_filepath, 'a' do |f|
         f.puts ""

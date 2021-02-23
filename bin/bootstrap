@@ -2,7 +2,7 @@
 
 module Repave
   class Bootstrap
-    def self.go
+    def run_task
       puts "Installing XCode command line utils & git"
       system "xcode-select --install"
 
@@ -20,5 +20,5 @@ module Repave
   end
 end
 
-Repave::Bootstrap.go
+Repave::Bootstrap.new.run_task
 

@@ -7,5 +7,7 @@ require_relative './repave/append_to_gitconfig'
 require_relative './repave/rcm_config'
 require_relative './repave/homebrew'
 require_relative './repave/quicksilver_yosemite'
+require_relative './repave/jetbrains_prefs'
+
 
 

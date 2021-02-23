@@ -8,8 +8,8 @@ require_relative File.expand_path(File.join(__dir__, "..", "lib", "repave"))
   Repave::AppendToGitconfig,
   Repave::RcmConfig,
   Repave::Homebrew,
-  Repave::QuicksilverYosemite
-# IntelliJ bindings
+  Repave::QuicksilverYosemite,
+  Repave::JetbrainsPrefs
 ].each do |task|
   task.new.run_task
 end

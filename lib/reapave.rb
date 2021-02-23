@@ -1,13 +1,7 @@
 module Repave;end
 
-require_relative './repave/task'
-require_relative './repave/set_system_name'
-require_relative './repave/set_macos_defaults'
-require_relative './repave/append_to_gitconfig'
-require_relative './repave/rcm_config'
-require_relative './repave/homebrew'
-require_relative './repave/quicksilver_yosemite'
-require_relative './repave/jetbrains_prefs'
-
+Dir[File.join(".", "repave", "*.rb")].each do |task_file|
+  require_relative task_file
+end
 
 

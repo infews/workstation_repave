@@ -25,10 +25,9 @@ What is the order of operations that lets Homebrew run as early as possible?
 ## Personal Cask and Formula
 
 - Can we write each of these actors as cask formulae:
-  1. ✔ macos_defaults
-  1. ✔ Oh My Zsh! ?
-  1. ✔ RCM config
-  1. ✔ Quicksilver/Yosemite
+  1. macos_defaults
+  1. RCM config
+  1.  Quicksilver/Yosemite
   1. pivotal intellij bindings
     - needs to handle relative includes better to work within Homebrew download
   

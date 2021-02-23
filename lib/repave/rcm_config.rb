@@ -2,25 +2,22 @@ module Repave
   class RcmConfig
     include Task
 
-    def initialize
-      @assets_filepath = File.expand_path(File.join(__dir__, "..", "..", "assets"))
-      @rcrc_filepath = File.join(@assets_filepath, 'rcrc')
-    end
+    def run_task
+      rcrc_filepath = File.join(ASSET_PATH, 'rcrc')
 
-    def go
-
-      if File.open(@rcrc_filepath).grep("DOTFILES_DIR")
-        puts color_message "RCM is already managing your dotfiles", :green
+      if File.open(rcrc_filepath).grep("DOTFILES_DIR")
+        puts success_message("RCM is already managing your dotfiles. Moving on.")
         return
       end
 
-      File.open @rcrc_filepath, 'a' do |rcrc_file|
-        rcrc_file.puts ""
-        rcrc_file.puts "DOTFILES_DIRS=#{@assets_filepath}"
+      puts info_message('Updating .rcrc with its path')
+      File.open rcrc_filepath, 'a' do |f|
+        f.puts ""
+        f.puts "DOTFILES_DIRS=#{ASSET_PATH}"
       end
 
-      puts color_message 'Configuring RCM', :green
-      system "rcup -d #{@assets_filepath}"
+      puts info_message('Configuring RCM to manage dotfiles')
+      system "rcup -d #{ASSET_PATH}"
     end
   end
 end

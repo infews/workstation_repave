@@ -4,7 +4,6 @@ tap 'git-duet/tap'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-drivers'
 tap 'thoughtbot/formulae'
-#tap 'infews/homebrew-tap'
 
 brew 'ack'
 brew 'aria2'
@@ -19,12 +18,12 @@ brew 'libxslt'
 brew 'mas'
 brew 'mysql'
 brew 'node'
-#brew 'nvim'
 brew 'postgresql'
 brew 'pstree'
 brew 'qt'
 brew 'rcm'
 brew 'ssh-copy-id'
+brew 'starship'
 brew 'ruby-install'
 brew 'the_silver_searcher'
 brew 'the_platinum_searcher'
@@ -43,7 +42,7 @@ cask 'font-source-code-pro'
 cask 'font-jetbrains-mono-nerd-font'
 cask 'font-xkcd'
 cask 'font-xkcd-script'
-cask 'fujitsu-scansnap-manager' # Only at home - pre-MacOS Catalina
+cask 'fujitsu-scansnap-home'
 cask 'github'
 cask 'google-chrome'
 cask 'google-drive-file-stream'
@@ -58,13 +57,12 @@ cask 'slate'
 cask 'vmware-fusion' # Only at home
 cask 'xquartz'
 cask 'xscope'
-cask 'zoomus'
+cask 'zoom'
 
 # DWF's Mac App Store apps YMMV; mas list can get your ID's for you
 mas "Daisy Disk", id: 411643860
 mas "LastPass", id: 926036361
 mas "Marked 2", id: 890031187
-mas "Server", id: 883878097
 mas "Slack", id: 803453959
 mas "SomaFM", id: 449155338
 mas "Soulver", id: 413965349

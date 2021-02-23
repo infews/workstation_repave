@@ -1,27 +1,27 @@
 module Repave
-  class PrepHomebrew
+  class Homebrew
     include Task
 
     def homebrew_present?
       !`which brew`.empty?
     end
 
-    def go
+    def run_task
       if homebrew_present?
-        puts color_message("Homebrew present and connected to Brewfile. You can run 'brew' as normal", :green)
+        puts success_message("Homebrew present and connected to Brewfile. You can run 'brew' as normal.")
         return
       end
 
-      puts color_message("Installing Homebrew", :cyan)
+      puts info_message("Installing Homebrew.")
       system '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
-
       system 'brew update'
-      puts color_message("Running brew the first time; using ~/workspace/workstation_repaver/assets/Brewfile", :cyan)
+
+      puts info_message("Running brew the first time; using ~/workspace/workstation_repaver/assets/Brewfile")
       system 'brew tap Homebrew/bundle'
       system 'brew bundle --global'
       system 'HOMEBREW_BUNDLE_FILE="${HOME}/workspace/workstation_repave/assets/Brewfile" brew bundle'
 
-      puts color_message("Running brew cleanup", :cyan)
+      puts info_message("Running brew cleanup.")
       system 'brew cleanup'
     end
   end

@@ -2,25 +2,22 @@ module Repave
   class AppendToGitconfig
     include Task
 
-    def initialize
-      @gitconfig_filepath = File.expand_path("~/.gitconfig")
-      @gitinclude_filepath = File.expand_path(File.join(__dir__, "..", "..", "assets", "gitinclude"))
-    end
+    def run_task
+      gitconfig_filepath = File.expand_path(File.join("~", ".gitconfig"))
+      gitinclude_filepath = File.expand_path(File.join(__dir__, "..", "..", "assets", "gitinclude"))
 
-    def go
-
-      if File.open(@gitconfig_filepath).grep(@gitinclude_filepath)
-        puts color_message "Git include directive already present in #{@gitconfig_filepath}", :green
+      if File.open(gitconfig_filepath).grep(gitinclude_filepath)
+        puts success_message("Git include directive already present in #{gitconfig_filepath}")
         return
       end
 
-      File.open @gitconfig_filepath, 'a' do |gitconfig_file|
-        gitconfig_file.puts ""
-        gitconfig_file.puts "[include]"
-        gitconfig_file.puts "    path=#{@gitinclude_filepath}"
-      end
+      info_message("Adding include directive to .gitconfig.")
 
-      puts color_message "Git include directive now in #{@gitconfig_filepath}", :green
+      File.open gitconfig_filepath, 'a' do |f|
+        f.puts ""
+        f.puts "[include]"
+        f.puts "    path=#{gitinclude_filepath}"
+      end
     end
   end
 end

@@ -13,18 +13,20 @@ System Ruby, [Homebrew][homebrew], and [Homebrew Bundle][homebrew_bundle] do the
 
 1. Have a clean MacOS
 1. Run Terminal
-1. Run the following:
+1. Run the following the bootstrap
 
 ```shell script
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/infews/workstation_repave/master/bootstrap)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/infews/workstation_repave/main/bin/bootstrap)"
 ```
 ...and watch the prompts
+
+4. Run `bin/repave` to finish
 
 # What's Happening?
 
 ## Bootstrap
 
-The `bootstrap` script will do the following:
+The `bin/bootstrap` script will do the following:
 - Install XCode's command line tools, which includes git
 - Make the ~/workspace directory (for all your coding projects)
 - Clone this repo
@@ -32,35 +34,36 @@ The `bootstrap` script will do the following:
 
 ## Repave
 
-Once you have this repo locally, you can run the `./bin/repave` script to run the remainder 
+The `bin/repave` script runs the remaining tasks, relying heavily on [Homebrew][homebrew] to finish the automatable tasks.
 
 # More on Customization
 
-- Homebrew installs nearly everything. And since this uses Brew Bundle, you can get all the apps and Mac App Store apps (thanks, `mas`) installed. The Brewfile is symlinked from `~/` to `assets`.
-- Thoughtbot's [rcm][rcm] manages your dotfiles, symlinking from `~/` to the `assets` directory. If you have an app that needs/wants a dotfile, add it here using RCM, just like the Brewfile.
+- Nearly everything is installed via [Homebrew][homebrew] and is listed in `assets/Brewfile` (for use with Homebrew Bundle)
+- Homebrew installs [rcm][rcm] in order to manage the dotfiles
+  - Dotfiles live in this repo in `assets` 
+  - The `bootstrap` script symlinks `~/` to `assets`
+  - The `repave` script connects rcm to `assets`
 - To allow git to do what it wants in `.gitconfig`, we write a version that includes `assets/gitinclude`, and RCM ignores it.
 
 # Known Manual Work
 
 These items don't seem to be automate-able. So manually crank through them once the system is updated.
 
-- Make Chrome default browser
-- Add Chrome Profiles
-- Dropbox Setup
-- Github desktop
+- Chrome
+  - Make Chrome default browser
+  - Add Chrome Profiles
+- Dropbox setup
+- Github desktop setup
 - Login apps:
   - Slate restart, slate on login
-  - MacsFans on login
   - Quicksilver config, on login, network plugin
   - Flycut
   - Dropbox
 - Licenses for:
   - Deckset 2
   - VMWare Fusion  
-- nvALT points to Dropbox directory
-- Desktop backgrounds are different, point to Dropbox, and rotate every 30mins
+- Rotating Desktop backgrounds
 - Configure TimeMachine
-- MacOS dock position
 
 [homebrew]: https://brew.sh/
 [homebrew_bundle]: https://github.com/Homebrew/homebrew-bundle

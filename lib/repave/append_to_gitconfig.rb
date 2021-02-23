@@ -3,7 +3,7 @@ module Repave
     include Task
 
     def run_task
-      gitconfig_filepath = File.expand_path(File.join("~", ".gitconfig"))
+      gitconfig_filepath = File.expand_path(File.join(Dir.home, ".gitconfig"))
       gitinclude_filepath = File.expand_path(File.join(__dir__, "..", "..", "assets", "gitinclude"))
 
       if File.open(gitconfig_filepath).grep(gitinclude_filepath)

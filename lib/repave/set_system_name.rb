@@ -3,7 +3,7 @@ module Repave
     include Task
 
     def run_task
-      system_name_file = File.expand_path("~/.system_name")
+      system_name_file = File.expand_path(File.join(Dir.home, "/.system_name"))
       system_name = File.open(system_name_file).read
 
       continue_if(File.exist?(system_name_file), "File ~/.system_name does not exist.")

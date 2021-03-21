@@ -13,7 +13,7 @@ module Repave
       end
 
       puts info_message("Installing Homebrew.")
-      system '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
+      system system '/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"'
       system 'brew update'
 
       puts info_message("Running brew the first time; using ~/workspace/workstation_repaver/assets/Brewfile")

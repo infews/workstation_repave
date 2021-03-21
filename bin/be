@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require "shellwords"
+# Smarter be for ruby projects
+
+class Be
+  def self.execute(command, all_params)
+    if File.exist?("./bin/#{command}")
+      system "bin/#{all_params.join(" ")}"
+    else
+      escaped_command = Shellwords.escape("bundle exec #{all_params.join(" ")}")
+      system "zsh -c #{escaped_command}"
+    end
+  end
+end
+
+Be.execute(ARGV[0], ARGV)

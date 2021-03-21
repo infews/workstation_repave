@@ -28,8 +28,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/infews/workstation_repave/
 
 The `bin/bootstrap` script will do the following:
 - Install XCode's command line tools, which includes git
-- Make the ~/workspace directory (for all your coding projects)
-- Clone this repo
+- Make the `~/workspace` directory (for all your coding projects)
+- Clone this repo into `~/workspace`
 - Prompt you to run the follow-on script
 
 ## Repave
@@ -52,17 +52,16 @@ These items don't seem to be automate-able. So manually crank through them once 
 - Chrome
   - Make Chrome default browser
   - Add Chrome Profiles
-- Dropbox setup
+- Dropbox login
+- Google Drive login  
 - Github desktop setup
-- Login apps:
-  - Slate restart, slate on login
-  - Quicksilver config, on login, network plugin
+- Login Items, so they start on startup
+  - Slate 
+  - Quicksilver
   - Flycut
   - Dropbox
 - Licenses for:
-  - Deckset 2
-  - VMWare Fusion  
-- Rotating Desktop backgrounds
+  - Deckset 2- Rotating Desktop backgrounds
 - Configure TimeMachine
 
 [homebrew]: https://brew.sh/

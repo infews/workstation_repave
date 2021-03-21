@@ -1,8 +1,11 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:~/workspace/workstation_repave/bin:$PATH
 
 # Starship for prompt, etc.
 eval "$(starship init zsh)"
+
+# Brewfile for `brew bundle`
+export HOMEBREW_BUNDLE_FILE="${HOME}/workspace/workstation_repave/assets/Brewfile"
 
 # Chruby for switching between rubies, including ./.ruby-version
 source /usr/local/share/chruby/chruby.sh
@@ -14,8 +17,8 @@ alias ll="ls -l ${ls_opts}"
 alias la="ls -a ${ls_opts}"
 
 # History search
-bindkey '^[[A' up-line-or-search
-bindkey '^[[B' down-line-or-search
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
 
 # Functions
 
@@ -29,11 +32,3 @@ function run() {
     done
 }
 
-# Smarter be for ruby projects
-function be() {
-  if [ -f "bin/$1" ]; then
-    "bin/$@"
-  else
-    "bundle exec $@"
-  fi
-}

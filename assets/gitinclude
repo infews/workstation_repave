@@ -2,7 +2,7 @@
   ci = duet-commit --verbose
   co = checkout
   di = diff
-  lg = log --graph --decorate=short --pretty=\"format:[%Cred%h%Creset]%d %ar by %Cblue%an%Creset. %Cgreen%s%Creset\" --find-renames=50%
+  lg =  git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   lw = log --decorate=short --graph --color-words -w --find-renames=50%
   st = status
   su = submodule update --init --recursive
@@ -25,3 +25,4 @@
 [user]
 	name = Davis W. Frank
 	email = dwfrank@gmail.com
+

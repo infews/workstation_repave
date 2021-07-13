@@ -15,10 +15,14 @@ module Repave
         system "git clone https://github.com/infews/workstation_repave.git"
       end
 
-      puts "You may now run bin/repave"
+      puts "Name this Mac by putting a name in the file ~/.system_name"
+      puts ""
+
+      puts "You may now run:"
+      puts "  cd ~/workspace/workstation_repave && bin/repave"
+      puts "...to repave this Mac."
     end
   end
 end
 
 Repave::Bootstrap.new.run_task
-

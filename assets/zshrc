@@ -9,6 +9,7 @@ eval "$(starship init zsh)"
 
 # fzf for history searching and command line fuzzy matching
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+bindkey '^[[A' fzf-history-widget
 
 # Chruby for switching between rubies, including ./.ruby-version
 source /usr/local/share/chruby/chruby.sh

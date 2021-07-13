@@ -1,3 +1,4 @@
+# - Runs a collection of MacOS default low level tweaks
 module Repave
   class SetMacOsDefaults
     include Task

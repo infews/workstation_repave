@@ -1,3 +1,7 @@
+# - Installs Homebrew the first time
+# - Installs brew bundle
+# - Runs brew bundle with the Brewfile in assets
+
 module Repave
   class Homebrew
     include Task
@@ -8,7 +12,7 @@ module Repave
 
     def run_task
       if homebrew_present?
-        puts success_message("Homebrew present and connected to Brewfile. You can run 'brew' as normal.")
+        puts success_message("Homebrew present and connected to Brewfile. You can run 'brew bundle' as normal.")
         return
       end
 

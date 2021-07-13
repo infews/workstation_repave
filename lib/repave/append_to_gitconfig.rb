@@ -1,10 +1,14 @@
+# - Creates a .gitconfig in ~
+# - appends an [include] directive to pull in the assets/gitinclude file
+# This is due to a limitation in how .gitconfig is parsed (it can't be symlink, it seems)
+
 module Repave
   class AppendToGitconfig
     include Task
 
     def run_task
-      gitconfig_filepath = File.expand_path(File.join(Dir.home, ".gitconfig"))
-      gitinclude_filepath = File.expand_path(File.join(__dir__, "..", "..", "assets", "gitinclude"))
+      gitconfig_filepath = Pathname(File.join(Dir.home, ".gitconfig")).expand_path
+      gitinclude_filepath = Pathname(File.join(__dir__, "..", "..", "assets", "gitinclude")).expand_path
 
       if File.open(gitconfig_filepath).grep(gitinclude_filepath)
         puts success_message("Git include directive already present in #{gitconfig_filepath}")

@@ -1,3 +1,4 @@
+# Helper module for all Repave Tasks
 module Repave
   module Task
     START_COLOR = {
@@ -32,6 +33,5 @@ module Repave
     def color_message(text, color)
       START_COLOR[color] + text + STOP_COLOR
     end
-
   end
 end

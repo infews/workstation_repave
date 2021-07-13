@@ -1,3 +1,5 @@
+# - Sets the system name to the context of the file ~/.system_name
+# - << You will need to populate this file for this to work >>
 module Repave
   class SetSystemName
     include Task

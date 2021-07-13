@@ -1,3 +1,6 @@
+# - Assumes Homebrew installed rcm to manage the dotfiles in the assets dir
+# - Appends the rcrc with the assets directory
+# - Runs rcup to attach symlinks to ~
 module Repave
   class RcmConfig
     include Task

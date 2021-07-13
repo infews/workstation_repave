@@ -1,3 +1,4 @@
+# - Downloads and installs the Quicksilver Yosemite UI plugin
 module Repave
   class QuicksilverYosemite
     include Task

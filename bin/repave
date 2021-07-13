@@ -1,16 +1,22 @@
 #!/usr/bin/env ruby
 
-require_relative File.expand_path(File.join(__dir__, "..", "lib", "repave"))
+require_relative Pathname(File.join(__dir__, "..", "lib", "repave")).expand_path
 
-[
-  Repave::SetSystemName,
-  Repave::SetMacOsDefaults,
-  Repave::AppendToGitconfig,
-  Repave::RcmConfig,
-  Repave::Homebrew,
-  Repave::QuicksilverYosemite,
-  Repave::JetbrainsPrefs
-].each do |task|
+module Repave
+  TASKS =
+    [
+      SetSystemName,
+      SetMacOsDefaults,
+      AppendToGitconfig,
+      RcmConfig,
+      Homebrew,
+      QuicksilverYosemite,
+      JetbrainsPrefs
+    ]
+end
+
+Repave::TASKS.each do |task|
   task.new.run_task
 end
 
+system "source ~/.zshrc"

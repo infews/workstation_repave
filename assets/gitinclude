@@ -1,6 +1,6 @@
 [alias]
   co = checkout
-  lg =  git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   lw = log --decorate=short --graph --color-words -w --find-renames=50%
   st = status
   su = submodule update --init --recursive

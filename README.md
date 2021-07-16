@@ -14,13 +14,16 @@ System Ruby, [Homebrew][homebrew], and [Homebrew Bundle][homebrew_bundle] do the
 1. Have a clean MacOS
 1. Run Terminal
 1. Run the following the bootstrap
+   ```shell script
+   sh -c "$(curl -fsSL https://raw.githubusercontent.com/infews/workstation_repave/main/bin/bootstrap)"
+   ```
+   ...and watch the prompts
 
-```shell script
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/infews/workstation_repave/main/bin/bootstrap)"
-```
-...and watch the prompts
-
-4. Run `bin/repave` to finish
+4. set your desired system name
+   ```shell script
+   vi ~/.system_name
+   ```
+5. Run `bin/repave` to finish
 
 # What's Happening?
 

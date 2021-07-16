@@ -20,7 +20,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/infews/workstation_repave/
 ```
 ...and watch the prompts
 
-4. Populate a file `~/.system_name` with the name you want for this computer 
+4. Populate the file `~/.system_name` with the name you want for this computer 
 5. Run `bin/repave` to finish
 
 # What's Happening?
@@ -37,20 +37,25 @@ The `bin/bootstrap` script will do the following:
 
 The `bin/repave` script runs the remaining tasks, relying heavily on [Homebrew][homebrew] to finish the automatable tasks.
 
-# More on Customization
+# How to Customize for You
 
-- Nearly everything is installed via [Homebrew][homebrew]
-  - Update the Brewfile in `assets/Brewfile` 
-- This uses [rcm][rcm] to manage the dotfiles
+- Fork this repo
+- Update the Brewfile in `assets/Brewfile`
+  - Nearly everything is installed via [Homebrew][homebrew]
+  - Make this file your own with brew scripts and casks for what you want/need 
+- Update/add any dotfiles in the `assets` directory
+  - [rcm][rcm] is instsalled to manage the dotfiles
   - Dotfiles live in this repo in `assets`, without prepended dots per rcm convention 
   - See `assets/rcrc` for which files are excluded
-- To allow git to do what it wants in `.gitconfig`, we write a version that includes `assets/gitinclude`, and RCM ignores it.
-- Configuration files & dotfiles live in `assets`
-- `bin` holds any executables
+- rcm and git
+  - Customize the file `assets/gitinclude` for your info
+  - There is a task to make `~/.gitconfig` but it includes the content `assets/gitinclude`
+  - See in `assets/rcrc` that `assets/gitinclude` (and others) are excluded, which means they are not symlinked to `$HOME`
+- Add any other personal executable scripts to `bin`
   - `assets/zshrc` adds `~/bin` to the `$PATH`
-- Ruby classes in `lib/repave` do the work
+- Edit/add any task classes to `bin/repave`
+  - Ruby classes in `lib/repave` do the work
   - Add new tasks as desired
-  - `bin/repave` actually runs the tasks
 
 # Known Manual Work
 

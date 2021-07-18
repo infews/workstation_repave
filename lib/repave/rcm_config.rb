@@ -6,7 +6,7 @@ module Repave
     include Task
 
     def run_task
-      rcrc_filepath = File.join(ASSET_PATH, 'rcrc')
+      rcrc_filepath = File.join(ASSETS_PATH, 'rcrc')
 
       if File.open(rcrc_filepath).grep("DOTFILES_DIR")
         puts success_message("RCM is already managing your dotfiles. Moving on.")

@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+require 'pathname'
 
 require_relative Pathname(File.join(__dir__, "..", "lib", "repave")).expand_path
 
@@ -6,12 +7,12 @@ module Repave
   TASKS =
     [
       SetSystemName,
-      SetMacOsDefaults,
       AppendToGitconfig,
       RcmConfig,
       Homebrew,
       QuicksilverYosemite,
-      JetbrainsPrefs
+      JetbrainsPrefs,
+      SetMacOsDefaults,
     ]
 end
 

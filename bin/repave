@@ -1,9 +1,12 @@
 #!/usr/bin/env ruby
-require 'pathname'
+require_relative File.join(".","lib",  "repave", "task.rb")
 
-require_relative Pathname(File.join(__dir__, "..", "lib", "repave")).expand_path
+Dir[File.join(".", "lib", "repave", "*.rb")].each do |task_file|
+  require_relative task_file
+end
 
 module Repave
+
   TASKS =
     [
       SetSystemName,

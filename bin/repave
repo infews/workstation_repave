@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
-require_relative File.join(".","lib",  "repave", "task.rb")
+require_relative File.join(__dir__, "..", "lib",  "repave", "task")
 
-Dir[File.join(".", "lib", "repave", "*.rb")].each do |task_file|
+files = Dir.glob(File.join(__dir__, "..", "lib", "repave", "*.rb"))
+files.each do |task_file|
   require_relative task_file
 end
 
@@ -9,10 +10,9 @@ module Repave
 
   TASKS =
     [
-      SetSystemName,
       AppendToGitconfig,
-      RcmConfig,
       Homebrew,
+      RcmConfig,
       QuicksilverYosemite,
       JetbrainsPrefs,
       SetMacOsDefaults,
@@ -22,5 +22,3 @@ end
 Repave::TASKS.each do |task|
   task.new.run_task
 end
-
-system "source ~/.zshrc"

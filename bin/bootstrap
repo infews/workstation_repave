@@ -1,14 +1,23 @@
 #!/usr/bin/env ruby
 
 require 'fileutils'
+require 'open3'
 
 module Repave
   class Bootstrap
     def run_task
-      puts "Installing XCode command line utils & git"
-      system "xcode-select --install"
+      stdout, stderr, status = Open3.capture3("xcode-select -p")
 
-      puts "Making the ~/workspace directory"
+      unless status.success?
+        puts "XCode Command Line Tools not installed. Installing now to install git."
+        puts ">> Rerun bootstrap after this completes."
+        system "xcode-select --install"
+        return
+      end
+
+      puts "XCode Command Line Tools installed. Continuing."
+
+      puts "Making the ~/workspace directory for code projects."
       workspace = File.expand_path(File.join("~","workspace"))
       FileUtils.mkdir_p workspace
 

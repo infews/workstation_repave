@@ -43,16 +43,16 @@ The `bin/repave` script runs the remaining tasks, relying heavily on [Homebrew][
 - Update the Brewfile in `assets/Brewfile`
   - Nearly everything is installed via [Homebrew][homebrew]
   - Make this file your own with brew scripts and casks for what you want/need 
-- Update/add any dotfiles in the `assets` directory
-  - [rcm][rcm] is instsalled to manage the dotfiles
-  - Dotfiles live in this repo in `assets`, without prepended dots per rcm convention 
-  - See `assets/rcrc` for which files are excluded
+- Update/add any dotfiles in the `dotfiles` directory
+  - Dotfiles live in this repo in `dotfiles`, without prepended dots per rcm convention
+  - [rcm][rcm] is installed to manage the dotfiles
+  - See `dotfiles/rcrc` for which files are excluded
 - rcm and git
   - Customize the file `assets/gitinclude` for your info
   - There is a task to make `~/.gitconfig` but it includes the content `assets/gitinclude`
   - See in `assets/rcrc` that `assets/gitinclude` (and others) are excluded, which means they are not symlinked to `$HOME`
 - Add any other personal executable scripts to `bin`
-  - `assets/zshrc` adds `~/bin` to the `$PATH`
+  - `dotfiles/zshrc` adds `~/bin` to the `$PATH`
 - Edit/add any task classes to `bin/repave`
   - Ruby classes in `lib/repave` do the work
   - Add new tasks as desired
@@ -77,7 +77,7 @@ These items don't seem to be automate-able. So manually crank through them once 
 - Licenses for:
   - [ ] Deckset 2
   - [ ] Airbuddy 2
-- [ ] Rotating Desktop backgrounds from Dropbox folder
+- [ ] Rotating Desktop backgrounds from network folder
 - [ ] Configure TimeMachine
 
 [homebrew]: https://brew.sh/

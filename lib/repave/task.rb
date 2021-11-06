@@ -7,7 +7,10 @@ module Repave
       :cyan => "\e[36m",
     }
     STOP_COLOR = "\e[0m"
-    ASSETS_PATH = File.expand_path(File.join(__dir__, "..", "..", "assets"))
+
+    ROOT_PATH = File.expand_path(File.join(__dir__, "..", ".."))
+    ASSETS_PATH = File.join(ROOT_PATH, "assets")
+    DOTFILES_PATH = File.join(ROOT_PATH, "dotfiles")
 
     def continue_if(boolean, error_message)
       return if boolean

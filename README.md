@@ -28,7 +28,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/infews/workstation_repave/
 ## `bin/bootstrap`
 
 The `bin/bootstrap` script will do the following:
-- Install XCode's command line tools, which includes git
+- Install XCode's command line tools, which includes `git`
 - Make the `~/workspace` directory (for all your coding projects)
 - Clone this repo into `~/workspace`
 - Prompt you to run the follow-on script
@@ -44,41 +44,24 @@ The `bin/repave` script runs the remaining tasks, relying heavily on [Homebrew][
   - Nearly everything is installed via [Homebrew][homebrew]
   - Make this file your own with brew scripts and casks for what you want/need 
 - Update/add any dotfiles in the `dotfiles` directory
-  - Dotfiles live in this repo in `dotfiles`, without prepended dots per rcm convention
-  - [rcm][rcm] is installed to manage the dotfiles
+  - Dotfiles live in this repo in `dotfiles`, **without** prepended dots per rcm convention
+  - [rcm][rcm] is installed (via Homebrew) to manage the dotfiles
   - See `dotfiles/rcrc` for which files are excluded
 - rcm and git
   - Customize the file `assets/gitinclude` for your info
-  - There is a task to make `~/.gitconfig` but it includes the content `assets/gitinclude`
-  - See in `assets/rcrc` that `assets/gitinclude` (and others) are excluded, which means they are not symlinked to `$HOME`
+  - There is a task to make `~/.gitconfig` but it includes the content from `assets/gitinclude` because of git issues
+- `dotfiles/zshrc` has some reasonable defaults
+  - `fzf`, Starship, and `chruby` are installed via Homebrew and referenced here  
 - Add any other personal executable scripts to `bin`
   - `dotfiles/zshrc` adds `~/bin` to the `$PATH`
 - Edit/add any task classes to `bin/repave`
   - Ruby classes in `lib/repave` do the work
-  - Add new tasks as desired
+  - Add new tasks as classes as desired
 
-# Known Manual Work
+# Contributing
 
-These items don't seem to be automate-able. So manually crank through them once the system is updated.
-
-- Chrome
-  - [ ] Make Chrome default browser
-  - [ ] Add Chrome Profiles
-- [ ] Dropbox login
-- [ ] Google Drive login  
-- GithHub
-  - [ ] Desktop setup
-  - [ ] Update local key
-- Login Items, so they start on startup
-  - [ ] Slate 
-  - [ ] Quicksilver
-  - [ ] Flycut
-  - [ ] Dropbox
-- Licenses for:
-  - [ ] Deckset 2
-  - [ ] Airbuddy 2
-- [ ] Rotating Desktop backgrounds from network folder
-- [ ] Configure TimeMachine
+- Please make any tasks idempotnent. The `repave` script is meant to be run often.
+- 
 
 [homebrew]: https://brew.sh/
 [homebrew_bundle]: https://github.com/Homebrew/homebrew-bundle

@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 require_relative File.join(__dir__, "..", "lib",  "repave", "task")
+require_relative File.join(__dir__, "..", "lib",  "repave", "mac_defaults")
 
 files = Dir.glob(File.join(__dir__, "..", "lib", "repave", "*.rb"))
 files.each do |task_file|
@@ -10,12 +11,18 @@ module Repave
 
   TASKS =
     [
+      # SetSystemName
       AppendToGitconfig,
       Homebrew,
       RcmConfig,
-      QuicksilverYosemite,
-      JetbrainsPrefs,
-      SetMacOsDefaults,
+      QuicksilverYosemite, # I still use this occastionally
+      MacDefaultsMisc, # This should be first of the MacDefaults
+      MacDefaultsScreenshots,
+      MacDefaultsDock,
+      MacDefaultsFinder,
+      MacDefaultsInput,
+      MacDefaultsAppStore,
+    # JetbrainsPrefs, # still broken
     ]
 end
 

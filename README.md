@@ -21,7 +21,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/infews/workstation_repave/
 ...and watch the prompts
 
 4. Populate the file `~/.system_name` with the name you want for this computer 
-5. Run `bin/repave` to finish
+5. Run `bin/repave` to finish (See customization below)
 
 # What's Happening?
 
@@ -38,6 +38,8 @@ The `bin/bootstrap` script will do the following:
 The `bin/repave` script runs the remaining tasks, relying heavily on [Homebrew][homebrew] to finish the automatable tasks.
 
 # How to Customize for You
+
+Yes, you _will_ want to customize this repo. 
 
 - Fork this repo
 - Update the Brewfile in `assets/Brewfile`
@@ -61,7 +63,7 @@ The `bin/repave` script runs the remaining tasks, relying heavily on [Homebrew][
 # Contributing
 
 - Please make any tasks idempotnent. The `repave` script is meant to be run often.
-- 
+- Please do not add any external dependencies. This is meant to be run on a fresh MacOS very simply.
 
 [homebrew]: https://brew.sh/
 [homebrew_bundle]: https://github.com/Homebrew/homebrew-bundle

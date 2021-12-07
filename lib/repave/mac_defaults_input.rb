@@ -1,5 +1,7 @@
 module Repave
-  class MacDefaultsInput < MacDefaults
+  class MacDefaultsInput
+    include MacDefaults
+
     COMMANDS =
       {
         "Trackpad: enable tap to click for this user and for the login screen":

@@ -1,5 +1,7 @@
 module Repave
-  class MacDefaultsDock < MacDefaults
+  class MacDefaultsDock
+    include MacDefaults
+
     COMMANDS =
       {
         "Enable highlight hover effect for the grid view of a stack (Dock)":

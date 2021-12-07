@@ -1,6 +1,6 @@
 module Repave
-  class MacDefaultsFinder < MacDefaults
-    include Task
+  class MacDefaultsFinder
+    include MacDefaults
 
     COMMANDS =
       {

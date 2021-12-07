@@ -1,5 +1,7 @@
 module Repave
-  class MacDefaultsAppStore < MacDefaults
+  class MacDefaultsAppStore
+    include MacDefaults
+
     COMMANDS =
       {
         "Enable the WebKit Developer Tools in the Mac App Store":

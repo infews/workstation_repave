@@ -1,5 +1,7 @@
 module Repave
-  class MacDefaultsScreenshots < MacDefaults
+  class MacDefaultsScreenshots
+    include MacDefaults
+    
     COMMANDS =
       {
         "Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)":

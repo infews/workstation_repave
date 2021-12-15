@@ -5,7 +5,7 @@ module Repave
 
   TASKS =
     [
-      SetSystemName
+      # SetSystemName,
       AppendToGitconfig,
       Homebrew,
       RcmConfig,
@@ -15,7 +15,7 @@ module Repave
       MacDefaultsDock,
       MacDefaultsFinder,
       MacDefaultsInput,
-      MacDefaultsAppStore,
+      MacDefaultsAppStore
     # JetbrainsPrefs, # still broken
     ]
 end

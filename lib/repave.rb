@@ -34,7 +34,7 @@ module Repave
     private
 
     def color_message(text, color)
-      START_COLOR[color] + text + STOP_COLOR
+      puts START_COLOR[color] + text + STOP_COLOR
     end
   end
 

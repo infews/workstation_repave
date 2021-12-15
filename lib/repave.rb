@@ -34,7 +34,7 @@ module Repave
     private
 
     def color_message(text, color)
-      puts START_COLOR[color] + text + STOP_COLOR
+      START_COLOR[color] + text + STOP_COLOR
     end
   end
 
@@ -51,7 +51,7 @@ module Repave
 
     def set_defaults(command_map)
       command_map.each do |message, commands|
-        info_message "MacOS Preference: #{message.to_s}"
+        puts info_message("MacOS Preference: ") + message.to_s
         Array(commands).each { |cmd| system cmd }
       end
     end

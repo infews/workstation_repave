@@ -26,7 +26,7 @@ module Repave
           "sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName",
 
         "Make the clock analog":
-          "defaults write com.apple.menuextra.clock IsAnalog 1 && killall -KILL SystemUIServer"
+          "defaults write com.apple.menuextra.clock IsAnalog -bool true && killall -KILL SystemUIServer"
       }
     end
   end

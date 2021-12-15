@@ -4,6 +4,9 @@ export PATH=$HOME/bin:/usr/local/bin:~/workspace/workstation_repave/bin:$PATH
 # Brewfile for `brew bundle`
 export HOMEBREW_BUNDLE_FILE="${HOME}/workspace/workstation_repave/assets/Brewfile"
 
+# Fix for keeping SSL upgraded with Homebrew
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+
 # Starship for prompt, etc.
 eval "$(starship init zsh)"
 

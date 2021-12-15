@@ -2,8 +2,8 @@ module Repave
   class MacDefaultsMisc
     include MacDefaults
 
-    COMMANDS =
-      {
+    def initialize
+      @mac_os_settings = {
         "Close any open System Preferences panes, to prevent them from overriding settings we’re about to change":
           %q{osascript -e 'tell application "System Preferences" to quit'},
 
@@ -28,6 +28,7 @@ module Repave
         "Make the clock analog":
           "defaults write com.apple.menuextra.clock IsAnalog 1 && killall -KILL SystemUIServer"
       }
+    end
   end
 end
 

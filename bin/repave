@@ -1,17 +1,11 @@
 #!/usr/bin/env ruby
-require_relative File.join(__dir__, "..", "lib",  "repave", "task")
-require_relative File.join(__dir__, "..", "lib",  "repave", "mac_defaults")
-
-files = Dir.glob(File.join(__dir__, "..", "lib", "repave", "*.rb"))
-files.each do |task_file|
-  require_relative task_file
-end
+require_relative File.join(__dir__, "..", "lib", "repave")
 
 module Repave
 
   TASKS =
     [
-      # SetSystemName
+      SetSystemName
       AppendToGitconfig,
       Homebrew,
       RcmConfig,

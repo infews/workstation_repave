@@ -11,22 +11,28 @@ module Repave
     end
 
     def run_task
-      if homebrew_present?
-        puts success_message("Homebrew present and connected to Brewfile. You can run 'brew bundle' as normal.")
-        return
-      end
+      homebrew_present? ? update : install
+    end
 
+    private
+
+    def install
       puts info_message("Installing Homebrew.")
       system "/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\""
       system 'brew update'
 
-      puts info_message("Running brew the first time; using ~/workspace/workstation_repaver/assets/Brewfile")
+      puts info_message("Running brew the first time; using ~/workspace/workstation_repave/assets/Brewfile")
       system 'brew tap Homebrew/bundle'
       system 'brew bundle --global'
       system 'HOMEBREW_BUNDLE_FILE="${HOME}/workspace/workstation_repave/assets/Brewfile" brew bundle'
 
       puts info_message("Running brew cleanup.")
       system 'brew cleanup'
+    end
+
+    def update
+      puts info_message("Homebrew present and connected to assets/Brewfile. Updating & Upgrading")
+      system "brew update && brew upgrade"
     end
   end
 end

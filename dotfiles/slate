@@ -13,5 +13,5 @@ bind left:ctrl;alt;cmd    chain push left ${half-width} | push left ${two-third-
 bind up:ctrl;alt;cmd      move windowTopLeftX;0 windowSizeX;screenSizeY/2
 bind down:ctrl;alt;cmd    move windowTopLeftX;screenSizeY/2+20 windowSizeX;screenSizeY/2
 
-bind m:ctrl;alt;cmd       move 0;0 screenSizeX;screenSizeY
+bind m:ctrl;alt;cmd       move screenOriginX;screenOriginY screenSizeX;screenSizeY
 bind c:ctrl;alt;cmd       move screenSizeX/6;screenSizeY/6 screenSizeX*2/3;screenSizeY*2/3

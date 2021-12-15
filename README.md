@@ -37,28 +37,41 @@ The `bin/bootstrap` script will do the following:
 
 The `bin/repave` script runs the remaining tasks, relying heavily on [Homebrew][homebrew] to finish the automatable tasks.
 
+# But _Really_, What's Happenning?
+
+- The repo is cloned locally
+- Anything that can be installed, will be in `assets/Brewfile`
+- All the dotfiles in `dotfiles` are managed and symlinked with `rcm`
+- Gitconfig is included (separately because git)
+- Run other, personal tasks
+
 # How to Customize for You
 
-Yes, you _will_ want to customize this repo. 
+Yes, you _*will*_ want to customize this repo. 
 
-- Fork this repo
-- Update the Brewfile in `assets/Brewfile`
-  - Nearly everything is installed via [Homebrew][homebrew]
-  - Make this file your own with brew scripts and casks for what you want/need 
-- Update/add any dotfiles in the `dotfiles` directory
-  - Dotfiles live in this repo in `dotfiles`, **without** prepended dots per rcm convention
-  - [rcm][rcm] is installed (via Homebrew) to manage the dotfiles
-  - See `dotfiles/rcrc` for which files are excluded
-- rcm and git
-  - Customize the file `assets/gitinclude` for your info
-  - There is a task to make `~/.gitconfig` but it includes the content from `assets/gitinclude` because of git issues
-- `dotfiles/zshrc` has some reasonable defaults
-  - `fzf`, Starship, and `chruby` are installed via Homebrew and referenced here  
+- Fork this repo and customize
+- Assets
+  - Update `assets/Brewfile` for all your installable apps (Homebrew, casks, mac apps)
+    - `assets/Brewfile` to be used always
+  - Update `assets/gitinclude` for git aliases & id's
+    - `.gitconfig` cannot be managed by `rcm`, so we build it at install time
+- Dotfiles
+  - Dotfiles live in `dotfiles`, **without** prepended dots per rcm convention
+    - [rcm][rcm] is installed (via Homebrew) to manage the dotfiles
+    - See `dotfiles/rcrc` for which files are excluded
+  - Useful defaults based on how repave works live in `zshrc`
 - Add any other personal executable scripts to `bin`
   - `dotfiles/zshrc` adds `~/bin` to the `$PATH`
-- Edit/add any task classes to `bin/repave`
-  - Ruby classes in `lib/repave` do the work
-  - Add new tasks as classes as desired
+- Make your own tasks
+  - Add new Ruby classes in `lib/repave` to do work (see examples)
+  - Edit/add any task classes to `bin/repave`
+
+# FAQ
+
+1. Why not just do this with shell scripts?
+   - Because I can never debug shell scripts. So Ruby FTW.
+2. Why not Ansible?
+   - Ruby FTW. 
 
 # Contributing
 

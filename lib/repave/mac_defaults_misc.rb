@@ -23,7 +23,7 @@ module Repave
           'defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true',
 
         "Reveal IP address, hostname, OS version, etc. when clicking the clock in the login window":
-          "sudo defaults write / Library / Preferences / com.apple.loginwindow AdminHostInfo HostName",
+          "sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName",
 
         "Make the clock analog":
           "defaults write com.apple.menuextra.clock IsAnalog 1 && killall -KILL SystemUIServer"

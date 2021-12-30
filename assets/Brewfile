@@ -1,6 +1,5 @@
 cask_args appdir: "/Applications"
 
-tap 'git-duet/tap'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-drivers'
 tap 'thoughtbot/formulae'
@@ -12,12 +11,9 @@ brew 'direnv'
 brew 'elixir'
 brew 'fzf'
 brew 'git'
-brew 'git-duet'
-brew 'jq'
 brew 'libxml2'
 brew 'libxslt'
 brew 'mas'
-brew 'mysql'
 brew 'node'
 brew 'postgresql'
 brew 'pstree'
@@ -26,8 +22,6 @@ brew 'rcm'
 brew 'ssh-copy-id'
 brew 'starship'
 brew 'ruby-install'
-brew 'the_silver_searcher'
-brew 'the_platinum_searcher'
 brew 'tree'
 brew 'watch'
 brew 'wget'
@@ -45,27 +39,20 @@ cask 'font-xkcd'
 cask 'font-xkcd-script'
 cask 'fujitsu-scansnap-home'
 cask 'github'
-cask 'google-chrome'
 cask 'google-drive'
 cask 'java'
 cask 'intellij-idea-ce'
-#cask 'macs-fan-control' # only needed for Mac Redwood (to turn off Disk Fan)
 cask 'obsidian'
 cask 'quicksilver'
 cask 'rubymine'
 cask 'slack'
 cask 'slate'
 cask 'visual-studio-code'
-cask 'vmware-fusion' # Only at home
 cask 'xquartz'
 cask 'xscope'
-cask 'zoom'
 
 # DWF's Mac App Store apps YMMV; mas list can get your ID's for you
 mas "Daisy Disk", id: 411643860
-mas "LastPass", id: 926036361
 mas "Marked 2", id: 890031187
 mas "Slack", id: 803453959
-mas "SomaFM", id: 449155338
-mas "Soulver", id: 413965349
 mas "ToDoist", id: 585829637

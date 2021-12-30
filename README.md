@@ -21,14 +21,14 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/infews/workstation_repave/
 ...and watch the prompts
 
 4. Populate the file `~/.system_name` with the name you want for this computer 
-5. Run `bin/repave` to finish
+5. Run `bin/repave` to finish (See customization below)
 
 # What's Happening?
 
 ## `bin/bootstrap`
 
 The `bin/bootstrap` script will do the following:
-- Install XCode's command line tools, which includes git
+- Install XCode's command line tools, which includes `git`
 - Make the `~/workspace` directory (for all your coding projects)
 - Clone this repo into `~/workspace`
 - Prompt you to run the follow-on script
@@ -37,48 +37,46 @@ The `bin/bootstrap` script will do the following:
 
 The `bin/repave` script runs the remaining tasks, relying heavily on [Homebrew][homebrew] to finish the automatable tasks.
 
+# But _Really_, What's Happenning?
+
+- The repo is cloned locally
+- Anything that can be installed, will be in `assets/Brewfile`
+- All the dotfiles in `dotfiles` are managed and symlinked with `rcm`
+- Gitconfig is included (separately because git)
+- Run other, personal tasks
+
 # How to Customize for You
 
-- Fork this repo
-- Update the Brewfile in `assets/Brewfile`
-  - Nearly everything is installed via [Homebrew][homebrew]
-  - Make this file your own with brew scripts and casks for what you want/need 
-- Update/add any dotfiles in the `assets` directory
-  - [rcm][rcm] is instsalled to manage the dotfiles
-  - Dotfiles live in this repo in `assets`, without prepended dots per rcm convention 
-  - See `assets/rcrc` for which files are excluded
-- rcm and git
-  - Customize the file `assets/gitinclude` for your info
-  - There is a task to make `~/.gitconfig` but it includes the content `assets/gitinclude`
-  - See in `assets/rcrc` that `assets/gitinclude` (and others) are excluded, which means they are not symlinked to `$HOME`
+Yes, you _*will*_ want to customize this repo. 
+
+- Fork this repo and customize
+- Assets
+  - Update `assets/Brewfile` for all your installable apps (Homebrew, casks, mac apps)
+    - `assets/Brewfile` to be used always
+  - Update `assets/gitinclude` for git aliases & id's
+    - `.gitconfig` cannot be managed by `rcm`, so we build it at install time
+- Dotfiles
+  - Dotfiles live in `dotfiles`, **without** prepended dots per rcm convention
+    - [rcm][rcm] is installed (via Homebrew) to manage the dotfiles
+    - See `dotfiles/rcrc` for which files are excluded
+  - Useful defaults based on how repave works live in `zshrc`
 - Add any other personal executable scripts to `bin`
-  - `assets/zshrc` adds `~/bin` to the `$PATH`
-- Edit/add any task classes to `bin/repave`
-  - Ruby classes in `lib/repave` do the work
-  - Add new tasks as desired
+  - `dotfiles/zshrc` adds `~/bin` to the `$PATH`
+- Make your own tasks
+  - Add new Ruby classes in `lib/repave` to do work (see examples)
+  - Edit/add any task classes to `bin/repave`
 
-# Known Manual Work
+# FAQ
 
-These items don't seem to be automate-able. So manually crank through them once the system is updated.
+1. Why not just do this with shell scripts?
+   - Because I can never debug shell scripts. So Ruby FTW.
+2. Why not Ansible?
+   - Ruby FTW. 
 
-- Chrome
-  - [ ] Make Chrome default browser
-  - [ ] Add Chrome Profiles
-- [ ] Dropbox login
-- [ ] Google Drive login  
-- GithHub
-  - [ ] Desktop setup
-  - [ ] Update local key
-- Login Items, so they start on startup
-  - [ ] Slate 
-  - [ ] Quicksilver
-  - [ ] Flycut
-  - [ ] Dropbox
-- Licenses for:
-  - [ ] Deckset 2
-  - [ ] Airbuddy 2
-- [ ] Rotating Desktop backgrounds from Dropbox folder
-- [ ] Configure TimeMachine
+# Contributing
+
+- Please make any tasks idempotnent. The `repave` script is meant to be run often.
+- Please do not add any external dependencies. This is meant to be run on a fresh MacOS very simply.
 
 [homebrew]: https://brew.sh/
 [homebrew_bundle]: https://github.com/Homebrew/homebrew-bundle

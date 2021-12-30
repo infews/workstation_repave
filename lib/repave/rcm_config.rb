@@ -6,21 +6,18 @@ module Repave
     include Task
 
     def run_task
-      rcrc_filepath = File.join(ASSET_PATH, 'rcrc')
+      rcrc_filepath = File.join(DOTFILES_PATH, "rcrc")
 
-      if File.open(rcrc_filepath).grep("DOTFILES_DIR")
-        puts success_message("RCM is already managing your dotfiles. Moving on.")
-        return
+      unless File.open(rcrc_filepath).grep("DOTFILES_DIRS")
+        puts info_message('Updating .rcrc with its path')
+        File.open rcrc_filepath, 'a' do |f|
+          f.puts "DOTFILES_DIRS=#{DOTFILES_PATH}"
+        end
       end
 
-      puts info_message('Updating .rcrc with its path')
-      File.open rcrc_filepath, 'a' do |f|
-        f.puts ""
-        f.puts "DOTFILES_DIRS=#{ASSET_PATH}"
-      end
-
-      puts info_message('Configuring RCM to manage dotfiles')
-      system "rcup -d #{ASSET_PATH}"
+      puts info_message('Restarting RCM to manage current dotfiles')
+      system "rcup -d #{DOTFILES_PATH}"
     end
+
   end
 end

@@ -1,22 +1,25 @@
 #!/usr/bin/env ruby
-
-require_relative Pathname(File.join(__dir__, "..", "lib", "repave")).expand_path
+require_relative File.join(__dir__, "..", "lib", "repave")
 
 module Repave
+
   TASKS =
     [
-      SetSystemName,
-      SetMacOsDefaults,
+      # SetSystemName,
       AppendToGitconfig,
-      RcmConfig,
       Homebrew,
-      QuicksilverYosemite,
-      JetbrainsPrefs
+      RcmConfig,
+      QuicksilverYosemite, # I still use this occastionally
+      MacDefaultsMisc, # This should be first of the MacDefaults
+      MacDefaultsScreenshots,
+      MacDefaultsDock,
+      MacDefaultsFinder,
+      MacDefaultsInput,
+      MacDefaultsAppStore
+    # JetbrainsPrefs, # still broken
     ]
 end
 
 Repave::TASKS.each do |task|
   task.new.run_task
 end
-
-system "source ~/.zshrc"

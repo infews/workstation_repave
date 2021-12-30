@@ -6,14 +6,14 @@ module Repave
       workspace_path = File.expand_path(File.join(Dir.home, "workspace"))
 
       Dir.chdir(workspace_path) do
-        unless File.exist? "jetbrains_ide_prefs"
-          puts info_message("Cloning jetbrains_ide_prefs repo locally")
-          system 'git clone https://github.com/professor/jetbrains_ide_prefs'
+        unless File.exist? "jetbrains-ide-prefs"
+          puts info_message("Cloning jetbrains-ide-prefs repo locally")
+          system 'git clone https://github.com/professor/jetbrains-ide-prefs.git'
         end
       end
 
-      Dir.chdir(File.join(workspace_path, 'jetbrains_ide_prefs')) do
-        puts info_message("Updating local copy of jetbrains_ide_prefs")
+       Dir.chdir(File.join(workspace_path, 'jetbrains-ide-prefs')) do
+        puts info_message("Updating local copy of jetbrains-ide-prefs")
         system "git pull"
 
         puts info_message('Installing Jetbrains IDE Prefs for all installed IDEs')

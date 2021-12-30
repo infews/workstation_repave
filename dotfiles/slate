@@ -6,11 +6,12 @@ alias half-width      bar-resize:screenSizeX/2
 alias q-width         bar-resize:screenSizeX/4
 alias third-width     bar-resize:screenSizeX/3
 alias two-third-width bar-resize:screenSizeX*2/3
+alias seven-eighths-width bar-resize:screenSizeX*7/8
 
-bind right:ctrl;alt;cmd   chain push right ${half-width} | push right ${two-third-width} | push right ${third-width} | push right ${q-width}
-bind left:ctrl;alt;cmd    chain push left ${half-width} | push left ${two-third-width} | push left ${third-width} | push left ${q-width}
+bind right:ctrl;alt;cmd   chain push right ${half-width} | push right ${two-third-width} | push right ${seven-eighths-width} | push right ${third-width} | push right ${q-width}
+bind left:ctrl;alt;cmd    chain push left ${half-width} | push left ${two-third-width} | push left ${seven-eighths-width} | push left ${third-width} | push left ${q-width}
 bind up:ctrl;alt;cmd      move windowTopLeftX;0 windowSizeX;screenSizeY/2
 bind down:ctrl;alt;cmd    move windowTopLeftX;screenSizeY/2+20 windowSizeX;screenSizeY/2
 
-bind m:ctrl;alt;cmd       move 0;0 screenSizeX;screenSizeY
+bind m:ctrl;alt;cmd       move screenOriginX;screenOriginY screenSizeX;screenSizeY
 bind c:ctrl;alt;cmd       move screenSizeX/6;screenSizeY/6 screenSizeX*2/3;screenSizeY*2/3

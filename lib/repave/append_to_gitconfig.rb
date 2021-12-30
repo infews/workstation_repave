@@ -2,6 +2,9 @@
 # - appends an [include] directive to pull in the assets/gitinclude file
 # This is due to a limitation in how .gitconfig is parsed (it can't be symlink, it seems)
 
+require 'fileutils'
+require 'pathname'
+
 module Repave
   class AppendToGitconfig
     include Task
@@ -10,7 +13,12 @@ module Repave
       gitconfig_filepath = Pathname(File.join(Dir.home, ".gitconfig")).expand_path
       gitinclude_filepath = Pathname(File.join(__dir__, "..", "..", "assets", "gitinclude")).expand_path
 
-      if File.open(gitconfig_filepath).grep(gitinclude_filepath)
+      unless File.exist?(gitconfig_filepath)
+        puts info_message("Creating an empty .gitconfig")
+        FileUtils.touch(gitconfig_filepath)
+      end
+
+      if File.open(gitconfig_filepath).grep(gitinclude_filepath).length > 0
         puts success_message("Git include directive already present in #{gitconfig_filepath}")
         return
       end

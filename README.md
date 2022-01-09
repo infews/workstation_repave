@@ -16,7 +16,7 @@ System Ruby, [Homebrew][homebrew], and [Homebrew Bundle][homebrew_bundle] do the
 1. Run the following to bootstrap
 
 ```shell script
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/infews/workstation_repave/main/bin/bootstrap)"
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/infews/workstation_repave/main/bin/bootstrap)"
 ```
 ...and watch the prompts
 

@@ -1,6 +1,14 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:~/workspace/workstation_repave/bin:$PATH
 
+# Homebrew updates
+export HOMEBREW_PREFIX="/opt/homebrew";
+export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+export HOMEBREW_REPOSITORY="/opt/homebrew";
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
+export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
+export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
+
 # Brewfile for `brew bundle`
 export HOMEBREW_BUNDLE_FILE="${HOME}/workspace/workstation_repave/assets/Brewfile"
 
@@ -15,8 +23,7 @@ eval "$(starship init zsh)"
 bindkey '^[[A' fzf-history-widget
 
 # Chruby for switching between rubies, including ./.ruby-version
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
+source $HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh
 
 # Aliases
 alias ls="ls ${ls_opts}"

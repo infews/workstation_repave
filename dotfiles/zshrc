@@ -1,3 +1,7 @@
+# MacOS LSCOLORS so directories, symlinks are colored well; Assumes a Dark theme
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:~/workspace/workstation_repave/bin:$PATH
 

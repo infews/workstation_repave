@@ -5,11 +5,10 @@ module Repave
 
   TASKS =
     [
-      # SetSystemName,
+      SetSystemName,
       AppendToGitconfig,
       Homebrew,
       RcmConfig,
-      QuicksilverYosemite, # I still use this occastionally
       MacDefaultsMisc, # This should be first of the MacDefaults
       MacDefaultsScreenshots,
       MacDefaultsDock,

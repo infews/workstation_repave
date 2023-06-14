@@ -32,7 +32,7 @@ module Repave
 
     def update
       puts info_message("Homebrew present and connected to assets/Brewfile. Updating & Upgrading")
-      system "brew update && brew upgrade"
+      system "brew update && brew upgrade && brew bundle"
     end
   end
 end

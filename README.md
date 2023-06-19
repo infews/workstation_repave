@@ -37,29 +37,32 @@ The `bin/bootstrap` script will do the following:
 
 The `bin/repave` script runs the remaining tasks, relying heavily on [Homebrew][homebrew] to finish the automatable tasks.
 
-# But _Really_, What's Happenning?
+# But _Really_, What's Happening?
 
 - The repo is cloned locally
-- Anything that can be installed, will be in `assets/Brewfile`
-- All the dotfiles in `dotfiles` are managed and symlinked with `rcm`
-- Gitconfig is included (separately because git)
-- Run other, personal tasks
+- Anything that can be installed via [Homebrew][homebrew], will be installed via [Homebrew Bundle][homebrew_bundle] with the Brewfile in `assets/Brewfile`
+- Any dotfiles for various apps live in `dotfiles` are managed and symlinked with `rcm`
+- Git is configured by generating a `.gitconfig` that includes `assets/gitinclude`
+  - This is because Git won't load a symlinked dotfile
+- Run other, personal tasks that live in `lib/repave`
 
 # How to Customize for You
 
 Yes, you _*will*_ want to customize this repo. 
 
 - Fork this repo and customize
+  - Everyone is going to have different preferences and apps
+  - Consciously _not_ extracting a grand unifying thing yet
 - Assets
   - Update `assets/Brewfile` for all your installable apps (Homebrew, casks, mac apps)
     - `assets/Brewfile` to be used always
   - Update `assets/gitinclude` for git aliases & id's
     - `.gitconfig` cannot be managed by `rcm`, so we build it at install time
 - Dotfiles
-  - Dotfiles live in `dotfiles`, **without** prepended dots per rcm convention
-    - [rcm][rcm] is installed (via Homebrew) to manage the dotfiles
+  - Dotfiles live in `dotfiles`, **without** prepended dots per RCM convention
+    - [RCM][rcm] is installed (via Homebrew) to manage the dotfiles
     - See `dotfiles/rcrc` for which files are excluded
-  - Useful defaults based on how repave works live in `zshrc`
+  - Useful defaults based on how repave works live in `zshrc`; Put anything you-specific in `zshrc`
 - Add any other personal executable scripts to `bin`
   - `dotfiles/zshrc` adds `~/bin` to the `$PATH`
 - Make your own tasks

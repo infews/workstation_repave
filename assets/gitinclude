@@ -1,6 +1,7 @@
 [alias]
   co = checkout
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all --date=local
   lw = log --decorate=short --graph --color-words -w --find-renames=50%
   st = status
   su = submodule update --init --recursive

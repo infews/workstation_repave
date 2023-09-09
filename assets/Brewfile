@@ -24,6 +24,7 @@ brew 'ruby-install'
 brew 'tree'
 brew 'watch'
 brew 'wget'
+brew 'yt-dlp'
 
 cask '1password'
 cask 'deckset'

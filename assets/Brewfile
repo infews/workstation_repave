@@ -1,71 +1,76 @@
 cask_args appdir: "/Applications"
 
-tap 'homebrew/cask-fonts'
-tap 'thoughtbot/formulae'
+tap "thoughtbot/formulae"
 
-brew 'ack'
-brew 'aria2'
-brew 'buildpacks/tap/pack'
-brew 'chruby'
-brew 'direnv'
-brew 'elixir'
+# terminal work
+brew "ack"
+brew "aria2"
+brew "direnv"
+brew "fzf"
+brew "gh"
+brew "git"
+brew "gum"
+brew "libxslt"
+brew "libxml2"
+brew "mas"
+brew "node"
+brew "rcm"
+brew "ssh-copy-id"
+brew "starship"
+brew "watch"
+brew "wget"
+brew "yt-dlp"
 
 # Fonts
-brew 'font-fira-code-nerd-font'
-brew 'font-fontawesome'
-brew 'font-ibm-plex'
-brew 'font-jetbrains-mono-nerd-font'
-brew 'font-source-code-pro'
+brew "font-fira-code-nerd-font"
+brew "font-fontawesome"
+brew "font-ibm-plex"
+brew "font-jetbrains-mono-nerd-font"
+brew "font-source-code-pro"
+cask "font-xkcd-script"
 
-brew 'fzf'
-brew 'gh'
-brew 'git'
-brew 'gum'
-brew 'postgresql'
-brew 'libxslt'
-brew 'libxml2'
-brew 'mas'
-brew 'node'
-brew 'openjdk'
-brew 'pandoc'
-brew 'pstree'
-brew 'qt'
-brew 'rcm'
-brew 'ssh-copy-id'
-brew 'starship'
-brew 'ruby-install'
-brew 'tree'
-brew 'watch'
-brew 'wget'
-brew 'yt-dlp'
+# Development
+brew "buildpacks/tap/pack"
+brew "chruby"
+cask "docker"
+brew "elixir"
+cask "github"
+cask "intellij-idea-ce"
+brew "postgresql"
+brew "openjdk"
+brew "pandoc"
+brew "pstree"
+brew "qt"
+brew "ruby-install"
+cask "rubymine"
+brew "tree"
+cask "visual-studio-code"
+cask "zed"
 
-cask '1password'
-cask '1password-cli'
-cask 'bricklink-studio'
-cask 'deckset'
-cask 'docker'
-cask 'dropbox'
-cask 'fertigt-slate' # Slate support for Apple Silicon
-cask 'flycut'
-cask 'font-xkcd-script'
-cask 'github'
-cask 'google-chrome'
-cask 'google-drive'
-cask 'intellij-idea-ce'
-cask 'notion'
-cask 'obsidian'
-cask 'quicken'
-cask 'rubymine'
-cask 'signal'
-cask 'slack'
-cask 'spatterlight'
-cask 'visual-studio-code'
-cask 'xquartz'
-cask 'xscope'
-cask 'zed'
-cask 'zoom'
+# MacOS Utilities
+cask "1password"
+cask "1password-cli"
+cask "fertigt-slate" # Slate support for Apple Silicon; NOTE: For Intel, need to get the DMG/App from elsewhere
+cask "flycut"
 
-# DWF's Mac App Store apps YMMV; mas list can get your ID's for you
+# MacOS Apps
+cask "bricklink-studio"
+cask "deckset"
+cask "dropbox"
+cask "google-chrome"
+cask "google-drive"
+cask "ia-presenter"
+cask "notion"
+cask "obsidian"
+cask "quicken"
+cask "signal"
+cask "slack"
+cask "spatterlight"
+cask "xquartz"
+cask "xscope"
+cask "zoom"
+
+# Mac App Store apps YMMV; Use 'mas list' to get your App IDs
 mas "Daisy Disk", id: 411643860
 mas "Marked 2", id: 890031187
 mas "ToDoist", id: 585829637

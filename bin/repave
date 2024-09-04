@@ -9,12 +9,13 @@ module Repave
       AppendToGitconfig,
       Homebrew,
       RcmConfig,
-      MacDefaultsMisc, # This should be first of the MacDefaults
-      MacDefaultsScreenshots,
-      MacDefaultsDock,
-      MacDefaultsFinder,
-      MacDefaultsInput,
-      MacDefaultsAppStore
+      # MacDefaultsMisc, # This should be first of the MacDefaults
+      # MacDefaultsMisc, # This should be first of the MacDefaults
+      # MacDefaultsScreenshots,
+      # MacDefaultsDock,
+      # MacDefaultsFinder,
+      # MacDefaultsInput,
+      # MacDefaultsAppStore
     # JetbrainsPrefs, # still broken
     ]
 end

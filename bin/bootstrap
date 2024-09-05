@@ -10,8 +10,8 @@ module Repave
 
       unless status.success?
         puts "XCode Command Line Tools not installed. Installing now to install git."
-        puts ">> Rerun bootstrap after this completes."
         system "xcode-select --install"
+        puts ">> Now re-run bootstrap."
         return
       end
 
@@ -26,7 +26,7 @@ module Repave
         system "git clone https://github.com/infews/workstation_repave.git"
       end
 
-      puts "Name this Mac by putting a name in the file ~/.system_name"
+      puts "Name this Mac by creating the file ~/.system_name, containing only the computer's name"
       puts ""
 
       puts "You may now run:"

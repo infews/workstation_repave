@@ -24,8 +24,8 @@ module Repave
 
       puts info_message("Running brew the first time; using ~/workspace/workstation_repave/assets/Brewfile")
       system "brew tap Homebrew/bundle"
+      system 'export HOMEBREW_BUNDLE_FILE="${HOME}/workspace/workstation_repave/assets/Brewfile"'
       system "brew bundle --global"
-      system 'HOMEBREW_BUNDLE_FILE="${HOME}/workspace/workstation_repave/assets/Brewfile" brew bundle'
 
       puts info_message("Running brew cleanup.")
       system 'brew cleanup'

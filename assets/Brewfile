@@ -22,11 +22,11 @@ brew "wget"
 brew "yt-dlp"
 
 # Fonts
-brew "font-fira-code-nerd-font"
-brew "font-fontawesome"
-brew "font-ibm-plex"
-brew "font-jetbrains-mono-nerd-font"
-brew "font-source-code-pro"
+cask "font-fira-code-nerd-font"
+cask "font-fontawesome"
+cask "font-ibm-plex"
+cask "font-jetbrains-mono-nerd-font"
+cask "font-source-code-pro"
 cask "font-xkcd-script"
 
 # Development
@@ -54,9 +54,9 @@ cask "fertigt-slate" # Slate support for Apple Silicon; NOTE: For Intel, need to
 cask "flycut"
 
 # MacOS Apps
-cask "bricklink-studio"
+#cask "bricklink-studio"
 cask "deckset"
-cask "dropbox"
+#cask "dropbox"
 cask "google-chrome"
 cask "google-drive"
 cask "ia-presenter"
@@ -66,8 +66,8 @@ cask "quicken"
 cask "signal"
 cask "slack"
 cask "spatterlight"
-cask "xquartz"
-cask "xscope"
+#cask "xquartz"
+#cask "xscope"
 cask "zoom"
 
 # Mac App Store apps YMMV; Use 'mas list' to get your App IDs

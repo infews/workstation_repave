@@ -36,7 +36,7 @@ export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 eval "$(starship init zsh)"
 
 # fzf for history searching and command line fuzzy matching
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 bindkey '^[[A' fzf-history-widget
 
 # Chruby for switching between rubies, including ./.ruby-version

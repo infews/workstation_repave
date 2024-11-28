@@ -26,6 +26,12 @@ module Repave
           "Enable full keyboard access for all controls (e.g., enable Tab in modal dialogs)":
             "defaults write NSGlobalDomain AppleKeyboardUIMode -int 3",
 
+          "Increases key repeat rate, requires reboot to take effect":
+            [
+              "defaults write ~/Library/Preferences/.GlobalPreferences KeyRepeat -int 1",
+              "defaults write ~/Library/Preferences/.GlobalPreferences InitialKeyRepeat -int 15"
+            ],
+
           "Use scroll gesture with the Ctrl (^) modifier key to zoom":
             [
               "defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true",

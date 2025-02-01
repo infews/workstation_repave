@@ -19,8 +19,8 @@ module Repave
     def install
       puts info_message("Installing Homebrew.")
       system "/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\""
-      system 'eval "$(/opt/homebrew/bin/brew shellenv)"'
-      system "brew update"
+      system 'eval "$(/opt/homebrew/bin/brew shellenv)" && brew update'
+      # system "brew update"
 
       puts info_message("Running brew the first time; using ~/workspace/workstation_repave/assets/Brewfile")
       system "brew tap Homebrew/bundle"
@@ -28,7 +28,7 @@ module Repave
       system "brew bundle --global"
 
       puts info_message("Running brew cleanup.")
-      system 'brew cleanup'
+      system "brew cleanup"
     end
 
     def update

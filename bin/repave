@@ -7,8 +7,8 @@ module Repave
     [
       SetSystemName,
       AppendToGitconfig,
-      Homebrew,
       RcmConfig,
+      Homebrew,
       # MacDefaultsMisc, # This should be first of the MacDefaults
       # MacDefaultsMisc, # This should be first of the MacDefaults
       # MacDefaultsScreenshots,
